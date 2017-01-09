@@ -22,7 +22,7 @@ cover_url   | string    |
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key
+user_id     | integer   | not null, indexed, foreign key
 title       | string    | not null
 
 ## shelvings
@@ -30,12 +30,13 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 book_id     | integer   | not null, foreign key
-bookshelf_id| integer   | not null, foreign key
+bookshelf_id| integer   | not null, indexed, foreign key
 
 ## reviews
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key
+user_id     | integer   | not null, indexed, foreign key
+book_id     | integer   | not null, indexed, foreign key
 rating      | integer   | not null
-body        | string    | not null
+body        | string    |
