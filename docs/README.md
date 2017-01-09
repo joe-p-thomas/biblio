@@ -43,9 +43,10 @@ below them.
 
 **Objective:** Books can be searched for by title or author.
 
-### Phase 5: Styling (Day 7)
+### Phase 5: Improve UX (Day 7)
 
-**objective:** Allow rich text editing of notes.
+**objective:** Allow editing and creating new items to be streamlined
+within the views.
 
 ### Phase 6: Styling (Day 8)
 
