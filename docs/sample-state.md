@@ -1,3 +1,4 @@
+```
 {
   currentUser: {
     id: 1,
@@ -37,3 +38,4 @@
     review: {errors: []}
   }
 }
+```
