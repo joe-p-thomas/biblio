@@ -1,18 +1,20 @@
 ```
 {
-  currentUser: {
-    id: 1,
-    firstName: Joe,
-    lastName: Thomas,
-    username: joe-p-thomas,
-    bookShelves: [
-      {
-        id: 1,
-        name: Fiction,
-        bookIds: [1]
-      },
-      ...
-    ],
+  session: {
+    currentUser: {
+      id: 1,
+      firstName: Joe,
+      lastName: Thomas,
+      username: joe-p-thomas,
+      bookShelves: [
+        {
+          id: 1,
+          name: Fiction,
+          bookIds: [1]
+        },
+        ...
+      ]
+    },
     errors: []
   },
   books: {
@@ -34,8 +36,7 @@
     ...
   },
   forms: {
-    book: {errors: []},
-    review: {errors: []}
+    errors: []
   }
 }
 ```
