@@ -8,7 +8,7 @@ first_name      | string    | not null
 last_name       | string    | not null
 username        | string    | not null, indexed, unique
 password_digest | string    | not null
-session_token   | string    | not null, unique
+session_token   | string    | not null, indexed, unique
 
 ## books
 column name | data type | details
@@ -16,7 +16,8 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 author      | string    | not null
-cover_url   | string    |
+description | text      | not null
+cover_url   | string    | not null
 
 ## bookshelves
 column name | data type | details

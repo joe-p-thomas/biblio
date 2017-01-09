@@ -13,7 +13,23 @@
           bookIds: [1]
         },
         ...
-      ]
+      ],
+      books: [
+        {
+          id: 2
+          title: The Fellowship of the Ring
+          author: J.R.R. Tolkien
+        },
+        ...
+      ],
+      reviews: {
+        2: {
+          id: 1,
+          bookId: 2,
+          rating: 5,
+          body: 'Great Book'
+        }
+      }
     },
     errors: []
   },
@@ -29,7 +45,7 @@
     1: {
       id: 1,
       bookId: 1,
-      userId: 1,
+      userId: 2,
       rating: 5,
       body: ''
     },
