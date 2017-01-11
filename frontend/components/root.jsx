@@ -4,8 +4,8 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import Header from './header';
 
-const Root = ({store}) => {
 
+const Root = ({store}) => {
   return(
     <Provider store={store}>
       <Router history={hashHistory}>

@@ -16,20 +16,20 @@ export const receiveErrors = (errors) => ({
 export const requestLogin = (user) => (dispatch) => (
   apiUtils.login(user).then(
     res => dispatch(receiveCurrentUser(res)),
-    res => dispatch(receiveErrors(res))
+    res => dispatch(receiveErrors(res.responseJSON))
   )
 );
 
 export const requestLogout = () => (dispatch) => (
   apiUtils.logout().then(
-    res => dispatch(receiveCurrentUser(res)),
-    res => dispatch(receiveErrors(res))
+    res => dispatch(receiveCurrentUser(null)),
+    res => dispatch(receiveErrors(res.responseJSON))
   )
 );
 
 export const requestSignup = (user) => (dispatch) => (
   apiUtils.signup(user).then(
     res => dispatch(receiveCurrentUser(res)),
-    res => dispatch(receiveErrors(res))
+    res => dispatch(receiveErrors(res.responseJSON))
   )
 );
