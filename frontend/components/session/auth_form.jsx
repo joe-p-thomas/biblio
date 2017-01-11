@@ -13,7 +13,8 @@ class AuthForm extends React.Component {
         username: '',
         password: ''
       },
-      formType: null
+      formType: null,
+      errors: this.props.errors
     };
 
     this.guestUser = {
@@ -31,7 +32,14 @@ class AuthForm extends React.Component {
   }
 
   handleClick(formType) {
-    this.setState({formType});
+    this.setState({formType: formType,
+                   user: {
+                     first_name: '',
+                     last_name: '',
+                     username: '',
+                     password: ''
+                   }});
+    this.props.clearErrors();
   }
 
   handleInput(e) {

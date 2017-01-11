@@ -11,10 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110203140) do
+ActiveRecord::Schema.define(version: 20170111215314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookshelves", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "bookshelves", ["title", "user_id"], name: "index_bookshelves_on_title_and_user_id", unique: true, using: :btree
+  add_index "bookshelves", ["user_id"], name: "index_bookshelves_on_user_id", using: :btree
+
+  create_table "shelvings", force: :cascade do |t|
+    t.integer  "book_id",      null: false
+    t.integer  "bookshelf_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "shelvings", ["book_id", "bookshelf_id"], name: "index_shelvings_on_book_id_and_bookshelf_id", unique: true, using: :btree
+  add_index "shelvings", ["book_id"], name: "index_shelvings_on_book_id", using: :btree
+  add_index "shelvings", ["bookshelf_id"], name: "index_shelvings_on_bookshelf_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string "first_name",      null: false

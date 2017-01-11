@@ -25,6 +25,7 @@
 
 ### Bookshelves
 
+- `GET /api/bookshelves`
 - `POST /api/bookshelves`
 - `PATCH /api/bookshelves/:id`
 - `DELETE /api/bookshelves/:id`

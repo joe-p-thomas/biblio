@@ -16,6 +16,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 author      | string    | not null
+user_id     | integer   | not null
 description | text      | not null
 cover_url   | string    | not null
 
