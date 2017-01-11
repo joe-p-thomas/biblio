@@ -16,9 +16,17 @@ class AuthForm extends React.Component {
       formType: null
     };
 
+    this.guestUser = {
+      first_name: 'guest',
+      last_name: 'user',
+      username: 'guest_user',
+      password: 'password'
+    };
+
     this.handleClick = this.handleClick.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
@@ -41,6 +49,11 @@ class AuthForm extends React.Component {
     }
   }
 
+  guestLogin(e) {
+    e.preventDefault();
+    this.props.requestLogin(this.guestUser);
+  }
+
   closeModal() {
     this.setState({formType: null});
   }
@@ -52,9 +65,9 @@ class AuthForm extends React.Component {
     const text = (this.state.formType === 'new') ? 'Sign up' : 'Log in';
     const altText = (this.state.formType === 'new') ? 'Log in' : 'Sign up';
     const altForm = (this.state.formType === 'new') ? 'old' : 'new';
-    let _newUserForm = [];
+    let newUserForm = [];
     if (this.state.formType === 'new') {
-      _newUserForm = [<input type='text'
+      newUserForm = [<input type='text'
                              name='first_name'
                              onChange={this.handleInput}
                              value={this.state.user.first_name}
@@ -70,6 +83,10 @@ class AuthForm extends React.Component {
                              key={'last_name'}>
                       </input>];
     }
+    let guestLoginButton;
+    if (this.state.formType === 'old') {
+      guestLoginButton = <button onClick={this.guestLogin}>Guest</button>;
+    }
 
     return(
       <div>
@@ -83,7 +100,7 @@ class AuthForm extends React.Component {
           <h4>{text}</h4>
           <h2>{errors}</h2>
           <form onSubmit={this.handleSubmit}>
-            {_newUserForm}
+            {newUserForm}
             <input type='text'
                    name='username'
                    onChange={this.handleInput}
@@ -102,6 +119,7 @@ class AuthForm extends React.Component {
           </form>
           <br></br>
           <p>or</p>
+          {guestLoginButton}
           <button onClick={() => this.handleClick(altForm)}>
             {altText}
           </button>
