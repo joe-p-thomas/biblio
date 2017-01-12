@@ -6,5 +6,4 @@ class Bookshelf < ActiveRecord::Base
 
   has_many :shelvings, dependent: :destroy
   has_many :books, through: :shelvings
-
 end
