@@ -26,10 +26,23 @@ button {
   border-radius: 3px;
   font-weight: 500;
   background-color: #DEDEDE;
+  font-size: 12px;
 }
 
 button:hover {
   background-color: lightgrey
+}
+
+.auth-loggedin {
+  width: auto;
+  font-size: 15px;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.auth-loggedin * {
+  margin-right: 10px;
 }
 
 .auth-form {
@@ -54,7 +67,7 @@ button:hover {
 
 .auth-alt-buttons * {
   margin-top: 10px;
-  width: 45%
+  width: 44%
 }
 
 .modal {

@@ -9,9 +9,9 @@ class Session extends React.Component {
   render() {
     if (this.props.currentUser) {
       return(
-        <div>
-          <h3>{`${this.props.currentUser.firstName}
-                ${this.props.currentUser.lastName}`}</h3>
+        <div className='auth-loggedin'>
+          <p>{`${this.props.currentUser.firstName}
+                ${this.props.currentUser.lastName}`}</p>
           <button onClick={this.props.requestLogout}>log out</button>
         </div>
       );
