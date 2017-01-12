@@ -14,7 +14,3 @@
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css?family=Alegreya');
-
-import './reset.css'
-
-import './nav/nav.css'
