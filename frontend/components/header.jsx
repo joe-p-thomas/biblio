@@ -16,8 +16,13 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="header">
-        <h3>biblio</h3>
+      <div className="nav">
+        <div className='logo'>
+            <h1>Biblio</h1>
+        </div>
+
+        <p>SearchBarComponent Place Holder</p>
+
         <SessionContainer />
       </div>
     );

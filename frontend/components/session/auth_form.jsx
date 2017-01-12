@@ -79,7 +79,7 @@ class AuthForm extends React.Component {
                              name='first_name'
                              onChange={this.handleInput}
                              value={this.state.user.first_name}
-                             placeholder={'first name'}
+                             placeholder={'First Name'}
                              key={'first_name'}>
                       </input>,
 
@@ -87,7 +87,7 @@ class AuthForm extends React.Component {
                              name='last_name'
                              onChange={this.handleInput}
                              value={this.state.user.last_name}
-                             placeholder={'last name'}
+                             placeholder={'Last Name'}
                              key={'last_name'}>
                       </input>];
     }
@@ -103,34 +103,35 @@ class AuthForm extends React.Component {
 
         <Modal isOpen={!!this.state.formType}
                onRequestClose={this.closeModal}
+               className='modal'
                style={modalStyle}
                contentLabel='Modal'>
           <h4>{text}</h4>
-          <h2>{errors}</h2>
-          <form onSubmit={this.handleSubmit}>
+          <ul>{errors}</ul>
+          <form className='auth-form'>
             {newUserForm}
             <input type='text'
                    name='username'
                    onChange={this.handleInput}
                    value={this.state.user.username}
-                   placeholder={'username'}>
+                   placeholder={'Username'}>
             </input>
 
             <input type='password'
                    name='password'
                    onChange={this.handleInput}
                    value={this.state.user.password}
-                   placeholder={'passoword'}>
+                   placeholder={'Passoword'}>
             </input>
 
-            <input type='submit' value={text}></input>
+            <button onClick={this.handleSubmit}>{text}</button>
           </form>
-          <br></br>
-          <p>or</p>
-          {guestLoginButton}
-          <button onClick={() => this.handleClick(altForm)}>
-            {altText}
-          </button>
+          <div className='auth-alt-buttons'>
+            {guestLoginButton}
+            <button onClick={() => this.handleClick(altForm)}>
+              {altText}
+            </button>
+          </div>
         </Modal>
       </div>
     );
