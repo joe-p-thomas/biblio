@@ -6,6 +6,35 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-guest = User.create(first_name: 'guest', last_name: 'user',
+#### USERS #####
+user1 = User.create(first_name: 'guest', last_name: 'user',
                     username: 'guest_user', password: 'password')
+
+
+
+
+#### BOOKS ####
+book1 = Book.create(title: 'The Hobbit',
+                    author: 'J.R.R. Tolkien',
+                    user_id: 1,
+                    image_url: 'hobbit-cover-688x1024_wbuwij',
+                    description: 'temp')
+
+book2 = Book.create(title: 'The Fellowship of the Ring',
+                    author: 'J.R.R. Tolkien',
+                    user_id: 1,
+                    image_url: 'ea81ba3426a4209bb7fe54c22801b877_d6exed',
+                    description: 'temp')
+
+
+
+
+#### BOOKSHELVES ####
+bookshelf1 = Bookshelf.create(title: 'Fantasy', user_id: user1.id)
+bookshelf2 = Bookshelf.create(title: 'Humor', user_id: user1.id)
+
+
+
+
+#### SHELVINGS ####
+shelving1 = Shelving.create(book_id: book1.id, bookshelf_id: bookshelf1.id)

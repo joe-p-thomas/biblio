@@ -1,6 +1,6 @@
 class Api::BookshelvesController < ApplicationController
   def index
-    @bookshelves = Bookshelf.find_by(user_id: current_user.id)
+    @bookshelves = Bookshelf.where("user_id = #{1}")
     render 'api/bookshelves/index'
   end
 
