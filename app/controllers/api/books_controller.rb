@@ -1,5 +1,11 @@
 class Api::BooksController < ApplicationController
+
   def index
+    @books = Book.take(10)
+    render 'api/book/index'
+  end
+
+  def users_books
     @books = current_user.books
     render 'api/books/index'
   end
@@ -20,7 +26,7 @@ class Api::BooksController < ApplicationController
   end
 
   def update
-    
+
   end
 
   def destroy
