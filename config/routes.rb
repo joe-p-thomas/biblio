@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :bookshelves, only: [:index, :create, :update, :destroy]
     resources :books, only: [:index, :show, :update, :destroy, :create]
     get '/books/users_books', to: 'books#users_books'
+    get '/books/seach', to: 'books#search_books'
   end
 
 end

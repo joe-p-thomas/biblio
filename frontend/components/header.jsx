@@ -21,7 +21,7 @@ class Header extends React.Component {
             <h1>Biblio</h1>
         </div>
 
-        <p>SearchBar</p>
+        <input></input>
 
         <SessionContainer />
       </div>

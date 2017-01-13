@@ -10,6 +10,11 @@ class Api::BooksController < ApplicationController
     render 'api/books/index'
   end
 
+  def search_books
+    @books = Book.where('author = ? OR title = ?', params[:param],
+                                                   params[:param])
+  end
+
   def show
     @book = Book.find(params[:id])
     render 'api/books/show'

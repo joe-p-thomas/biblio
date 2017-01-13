@@ -12,6 +12,13 @@ export const fetchUsersBooks = () => (
   })
 );
 
+export const fetchBooksByParams = (params) => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/books/search'
+  })
+);
+
 export const fetchBook = (book) => (
   $.ajax({
     method: 'GET',

@@ -37,6 +37,12 @@ export const requestUsersBooks = () => ( dispatch ) => (
   )
 );
 
+export const requestBooksByParams = (params) => (dispatch) => (
+  apiUtils.fetchBooksByParams(params).then(
+    res => dispatch(receiveBooks(res))
+  )
+);
+
 export const requestBook = (book) => (dispatch) => (
   apiUtils.fetchBook(book).then(
     res => dispatch(receiveBook(res))

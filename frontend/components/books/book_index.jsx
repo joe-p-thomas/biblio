@@ -12,6 +12,7 @@ class BookIndex extends React.Component {
     ));
     return(
       <div className='book-index'>
+        <h2>{this.props.title}</h2>
         <ul>
           {books}
         </ul>

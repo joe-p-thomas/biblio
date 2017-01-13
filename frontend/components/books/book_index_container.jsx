@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import BookIndex from './book_index';
 
 const mapStateToProps = (state, ownProps) => ({
-  books: ownProps.books
+  books: ownProps.books,
+  title: ownProps.title
 });
 
 const mapDispatchToProps = (state) => ({
