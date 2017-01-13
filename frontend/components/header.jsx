@@ -1,11 +1,11 @@
 import React from 'react';
 import Modal from 'react-modal';
 import SessionContainer from './session/session_container';
+import SearchBarContainer from './search/search_bar_container';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   toggleModal(formType) {
@@ -21,7 +21,7 @@ class Header extends React.Component {
             <h1>Biblio</h1>
         </div>
 
-        <input></input>
+        <SearchBarContainer/>
 
         <SessionContainer />
       </div>

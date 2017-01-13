@@ -15,7 +15,8 @@ export const fetchUsersBooks = () => (
 export const fetchBooksByParams = (params) => (
   $.ajax({
     method: 'GET',
-    url: 'api/books/search'
+    url: 'api/books/search',
+    data: {params}
   })
 );
 
