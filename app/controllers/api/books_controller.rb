@@ -1,8 +1,8 @@
 class Api::BooksController < ApplicationController
 
   def index
-    @books = Book.take(10)
-    render 'api/book/index'
+    @books = Book.all
+    render 'api/books/index'
   end
 
   def users_books

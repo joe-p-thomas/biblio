@@ -7,7 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #### USERS #####
-user1 = User.create(first_name: 'guest', last_name: 'user',
+user1 = User.create(first_name: 'Joe', last_name: 'Thomas',
+                    username: 'joe-thomas', password: 'password')
+
+user2 = User.create(first_name: 'guest', last_name: 'user',
                     username: 'guest_user', password: 'password')
 
 
@@ -29,9 +32,81 @@ book2 = Book.create(title: 'The Fellowship of the Ring',
 
 
 
+
+book2 = Book.create(title: 'The Two Towers',
+                    author: 'J.R.R. Tolkien',
+                    user_id: 1,
+                    image_url: '',
+                    description: 'temp')
+
+book2 = Book.create(title: 'The Fellowship of the Ring',
+                    author: 'J.R.R. Tolkien',
+                    user_id: 1,
+                    image_url: 'ea81ba3426a4209bb7fe54c22801b877_d6exed',
+                    description: 'temp')
+
+book2 = Book.create(title: 'The Fellowship of the Ring',
+                    author: 'J.R.R. Tolkien',
+                    user_id: 1,
+                    image_url: 'ea81ba3426a4209bb7fe54c22801b877_d6exed',
+                    description: 'temp')
+
+book2 = Book.create(title: 'The Fellowship of the Ring',
+                    author: 'J.R.R. Tolkien',
+                    user_id: 1,
+                    image_url: 'ea81ba3426a4209bb7fe54c22801b877_d6exed',
+                    description: 'temp')
+
+book2 = Book.create(title: 'The Fellowship of the Ring',
+                    author: 'J.R.R. Tolkien',
+                    user_id: 1,
+                    image_url: 'ea81ba3426a4209bb7fe54c22801b877_d6exed',
+                    description: 'temp')
+
+book2 = Book.create(title: 'The Fellowship of the Ring',
+                    author: 'J.R.R. Tolkien',
+                    user_id: 1,
+                    image_url: 'ea81ba3426a4209bb7fe54c22801b877_d6exed',
+                    description: 'temp')
+
+book2 = Book.create(title: 'The Fellowship of the Ring',
+                    author: 'J.R.R. Tolkien',
+                    user_id: 1,
+                    image_url: 'ea81ba3426a4209bb7fe54c22801b877_d6exed',
+                    description: 'temp')
+
+book2 = Book.create(title: 'The Fellowship of the Ring',
+                    author: 'J.R.R. Tolkien',
+                    user_id: 1,
+                    image_url: 'ea81ba3426a4209bb7fe54c22801b877_d6exed',
+                    description: 'temp')
+
+book2 = Book.create(title: 'The Fellowship of the Ring',
+                    author: 'J.R.R. Tolkien',
+                    user_id: 1,
+                    image_url: 'ea81ba3426a4209bb7fe54c22801b877_d6exed',
+                    description: 'temp')
+
+book2 = Book.create(title: 'The Fellowship of the Ring',
+                    author: 'J.R.R. Tolkien',
+                    user_id: 1,
+                    image_url: 'ea81ba3426a4209bb7fe54c22801b877_d6exed',
+                    description: 'temp')
+
+book2 = Book.create(title: 'The Fellowship of the Ring',
+                    author: 'J.R.R. Tolkien',
+                    user_id: 1,
+                    image_url: 'ea81ba3426a4209bb7fe54c22801b877_d6exed',
+                    description: 'temp')
+
+
+
+
+
+
 #### BOOKSHELVES ####
-bookshelf1 = Bookshelf.create(title: 'Fantasy', user_id: user1.id)
-bookshelf2 = Bookshelf.create(title: 'Humor', user_id: user1.id)
+bookshelf1 = Bookshelf.create(title: 'Fantasy', user_id: user2.id)
+bookshelf2 = Bookshelf.create(title: 'Humor', user_id: user2.id)
 
 
 
