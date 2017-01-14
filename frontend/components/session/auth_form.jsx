@@ -68,7 +68,7 @@ class AuthForm extends React.Component {
 
   render() {
     const errors = this.props.errors.map((error, idx) => (
-      <li key={idx}>{error}</li>
+      <li key={idx}>-{error}</li>
     ));
     const text = (this.state.formType === 'new') ? 'Sign up' : 'Log in';
     const altText = (this.state.formType === 'new') ? 'Log in' : 'Sign up';

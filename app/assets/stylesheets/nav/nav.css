@@ -1,7 +1,3 @@
-body {
-  background-color: #FEFEFE;
-}
-
 .nav {
   position: fixed;
   top: 0;
@@ -15,16 +11,24 @@ body {
   box-shadow: 0px 1px 4px grey
 }
 
-/*.nav:after {
-  content: '';
-  display: block
-}*/
+.left-nav {
+  display: flex;
+  align-items: center;
+}
 
-.logo h1 {
+.left-nav button {
+  background-color: inherit
+}
+
+.logo {
   font-family: 'Alegreya', serif;
   padding-left: 15px;
   color: #1E3445;
   font-size: 40px
+}
+
+.logo:hover {
+  cursor: pointer;
 }
 
 
@@ -72,6 +76,13 @@ button:hover {
   font-size: 12px;
   padding: 3px;
   border-radius: 1px;
+}
+
+.modal li {
+  list-style: none;
+  font-size: 12px;
+  padding-left: 4px;
+  color: #777;
 }
 
 .auth-alt-buttons * {

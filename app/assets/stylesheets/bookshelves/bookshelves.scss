@@ -1,0 +1,30 @@
+.bookshelf-sidebar {
+  position: fixed;
+  padding-top: 5px;
+  margin: 15px;
+  width: 150px;
+}
+
+.bookshelf-sidebar h4 {
+  padding-bottom: 5px;
+}
+
+.bookshelf-list {
+  padding-left: 5px
+}
+
+.bookshelf {
+  border-radius: 3px;
+}
+
+.bookshelf h5 {
+  font-weight: 500;
+  width: 100px;
+  padding: 3px;
+  border-top: 1px solid lightgrey;
+}
+
+.bookshelf h5:hover {
+  cursor: pointer;
+  background: lightgrey;
+}

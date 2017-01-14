@@ -74,13 +74,13 @@ book9 = Book.create(title: 'A Dance with Dragons',
                     description: 'temp')
 
 ## Science Fiction ##
-book = Book.create(title: 'Stranger in a Strange Land',
+book10 = Book.create(title: 'Stranger in a Strange Land',
                    author: 'Robert A Heinlein',
                    user_id: 1,
                    image_url: 'stranger_ina_strange_land._oljloy',
                    description: 'temp')
 
-book = Book.create(title: 'Dune',
+book11 = Book.create(title: 'Dune',
                    author: 'Frank Herbert',
                    user_id: 1,
                    image_url: '41shWIN_2BssL_tybesv',
@@ -95,10 +95,18 @@ book = Book.create(title: 'Dune',
 
 #### BOOKSHELVES ####
 bookshelf1 = Bookshelf.create(title: 'Fantasy', user_id: user2.id)
-bookshelf2 = Bookshelf.create(title: 'Humor', user_id: user2.id)
+bookshelf2 = Bookshelf.create(title: 'Science Fiction', user_id: user2.id)
 
 
 
 
 #### SHELVINGS ####
 shelving1 = Shelving.create(book_id: book1.id, bookshelf_id: bookshelf1.id)
+shelving2 = Shelving.create(book_id: book2.id, bookshelf_id: bookshelf1.id)
+shelving3 = Shelving.create(book_id: book3.id, bookshelf_id: bookshelf1.id)
+shelving4 = Shelving.create(book_id: book4.id, bookshelf_id: bookshelf1.id)
+shelving5 = Shelving.create(book_id: book5.id, bookshelf_id: bookshelf1.id)
+shelving6 = Shelving.create(book_id: book6.id, bookshelf_id: bookshelf1.id)
+
+shelving7 = Shelving.create(book_id: book10.id, bookshelf_id: bookshelf2.id)
+shelving8 = Shelving.create(book_id: book11.id, bookshelf_id: bookshelf2.id)

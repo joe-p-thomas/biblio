@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import Modal from 'react-modal';
 import SessionContainer from './session/session_container';
 import SearchBarContainer from './search/search_bar_container';
@@ -6,6 +7,8 @@ import SearchBarContainer from './search/search_bar_container';
 class Header extends React.Component {
   constructor(props) {
     super(props);
+
+    this.redirect = this.redirect.bind(this);
   }
 
   toggleModal(formType) {
@@ -14,11 +17,25 @@ class Header extends React.Component {
     });
   }
 
+  redirect(path) {
+    this.props.router.push(path);
+  }
+
   render() {
+    let bookshelfButton = (
+      <button onClick={() => this.props.router.push('/bookshelves')}>
+        Bookshelves
+      </button>
+    );
+
     return (
       <div className="nav">
-        <div className='logo'>
-            <h1>Biblio</h1>
+        <div className="left-nav">
+            <h1 className='logo'
+                onClick={() => this.props.router.push('/')}>
+              Biblio
+            </h1>
+            {bookshelfButton}
         </div>
 
         <SearchBarContainer/>
@@ -30,4 +47,4 @@ class Header extends React.Component {
 
 }
 
-export default Header;
+export default withRouter(Header);

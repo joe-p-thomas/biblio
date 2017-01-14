@@ -12,7 +12,9 @@ class App extends React.Component {
     return(
       <div>
         <Header/>
-        {this.props.children}
+        <div className='body'>
+          {this.props.children}
+        </div>
       </div>
     );
   }

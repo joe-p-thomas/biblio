@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -17,21 +18,23 @@ class SearchBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.search(this.state.params);
+    this.props.search(this.state.params).then(() => {
+      this.props.router.push('/');
+    });
   }
 
   render() {
     return(
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input type='text'
                value={this.state.params}
                onChange={this.handleInput}
-               placeholder='Search'>
+               placeholder='Search'
+               className='search-bar'>
         </input>
-        <button onClick={this.handleSubmit}></button>
       </form>
     );
   }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);

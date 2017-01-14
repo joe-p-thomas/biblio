@@ -11,8 +11,9 @@ class Api::BooksController < ApplicationController
   end
 
   def search_books
-    @books = Book.where('author = ? OR title = ?', params[:params],
-                                                   params[:params])
+    param = params[:params].downcase
+    @books = Book.where('lower(author) LIKE ? OR lower(title) LIKE ?',
+                        "%#{param}%", "%#{param}%")
     render 'api/books/index'
   end
 
