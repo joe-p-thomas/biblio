@@ -22,6 +22,11 @@ class Api::BooksController < ApplicationController
     render 'api/books/show'
   end
 
+  def book_detail
+    @book = Book.find(params[:id])
+    render 'api/books/book_detail'
+  end
+
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id

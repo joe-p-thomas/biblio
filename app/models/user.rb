@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token
+  after_save :build_default_shelves
 
   has_many :bookshelves
   has_many :books, through: :bookshelves
@@ -28,6 +29,12 @@ class User < ActiveRecord::Base
     self.session_token = SecureRandom.urlsafe_base64(16)
     self.save
     self.session_token
+  end
+
+  def build_default_shelves
+    Bookshelf.create(title: 'Read', user_id: self.id)
+    Bookshelf.create(title: 'Will Read', user_id: self.id)
+    true
   end
 
   def self.find_by_credentials(username, password)

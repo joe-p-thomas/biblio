@@ -7,7 +7,8 @@ class Bookshelves extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedShelf: null,
+      selectedShelf: 0,
+      selectedShelfTitle: 'Read',
       shownBooks: [],
       modalOpen: false,
       newShelfTitle: ''
@@ -36,6 +37,7 @@ class Bookshelves extends React.Component {
 
     this.setState({
       selectedShelf: idx,
+      selectedShelfTitle: shownBookshelf.title,
       shownBooks
     });
   }
@@ -76,7 +78,8 @@ class Bookshelves extends React.Component {
     ));
     bookshelves.push(
       <div className='bookshelf'
-           onClick={() => this.setState({modalOpen: true})}>
+           onClick={() => this.setState({modalOpen: true})}
+           key={'add'}>
         <h5 className='add-button'>add bookshelf</h5>
       </div>
     );
@@ -95,7 +98,7 @@ class Bookshelves extends React.Component {
         </div>
 
         <BookIndexContainer books={this.state.shownBooks}
-                            title={'My Books'}/>
+                            title={this.state.selectedShelfTitle}/>
 
         <Modal isOpen={this.state.modalOpen}
                onRequestClose={() => this.setState({modalOpen: false})}

@@ -27,6 +27,13 @@ export const fetchBook = (book) => (
   })
 );
 
+export const fetchBookDetail = (book) => (
+  $.ajax({
+    method: 'GET',
+    url: `api/books/detail/${book.id}`
+  })
+);
+
 export const createBook = (book) => (
   $.ajax({
     method: 'POST',

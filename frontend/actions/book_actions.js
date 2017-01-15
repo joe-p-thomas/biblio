@@ -3,6 +3,7 @@ import * as apiUtils from '../util/book_api_util';
 export const RECEIVE_BOOKS = 'RECEIVE_BOOKS';
 export const RECEIVE_BOOK = 'RECEIVE_BOOK';
 export const REMOVE_BOOK = 'REMOVE_BOOK';
+export const RECEIVE_BOOK_DETAIL = 'RECEIVE_BOOK_DETAIL';
 export const RECEIVE_FORM_ERRORS = 'RECEIVE_FORM_ERRORS';
 
 export const receiveBooks = ( books ) => ({
@@ -12,6 +13,11 @@ export const receiveBooks = ( books ) => ({
 
 export const receiveBook = ( book ) => ({
   type: RECEIVE_BOOK,
+  book
+});
+
+export const receiveBookDetail = (book) => ({
+  type: RECEIVE_BOOK_DETAIL,
   book
 });
 
@@ -48,6 +54,12 @@ export const requestBooksByParams = (params) => (dispatch) => (
 export const requestBook = (book) => (dispatch) => (
   apiUtils.fetchBook(book).then(
     res => dispatch(receiveBook(res))
+  )
+);
+
+export const requestBookDetail = (book) => (dispatch) => (
+  apiUtils.fetchBookDetail(book).then(
+    res => dispatch(receiveBookDetail(res))
   )
 );
 

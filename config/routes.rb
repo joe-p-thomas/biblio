@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   get '/api/books/users_books', to: 'api/books#users_books'
+  get 'api/books/detail/:id', to: 'api/books#book_detail'
   get '/api/books/search', to: 'api/books#search_books'
 
   namespace :api, defaults: { format: :json } do
