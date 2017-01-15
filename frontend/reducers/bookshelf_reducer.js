@@ -14,7 +14,7 @@ const BookshelfReducer = (state = {}, action ) => {
       return newState;
     case REMOVE_BOOKSHELF:
       newState = merge({}, state);
-      newState.delete(action.bookshelf);
+      delete newState[action.bookshelf];
       return newState;
     default:
       return state;

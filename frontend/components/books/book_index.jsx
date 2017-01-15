@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import BookIndexItem from './book_index_item';
 
 class BookIndex extends React.Component {
@@ -21,4 +22,4 @@ class BookIndex extends React.Component {
   }
 }
 
-export default BookIndex;
+export default withRouter(BookIndex);

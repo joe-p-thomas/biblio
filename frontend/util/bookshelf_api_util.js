@@ -24,7 +24,6 @@ export const updateBookshelf = (bookshelf) => (
 export const deleteBookshelf = (bookshelf) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/bookshelves/${bookshelf.id}`,
-    data: {bookshelf}
+    url: `api/bookshelves/${bookshelf.id}`
   })
 );

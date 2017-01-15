@@ -28,14 +28,19 @@ class Header extends React.Component {
       </button>
     );
 
+    let browseButton = (
+      <button onClick={() => this.props.router.push('/')}>
+        Browse
+      </button>
+    );
     return (
       <div className="nav">
         <div className="left-nav">
-            <h1 className='logo'
-                onClick={() => this.props.router.push('/')}>
+            <h1 className='logo'>
               Biblio
             </h1>
             {bookshelfButton}
+            {browseButton}
         </div>
 
         <SearchBarContainer/>

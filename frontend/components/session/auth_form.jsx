@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import modalStyle from './modal_style';
+import modalStyle from '../../modal_style';
 import { merge } from 'lodash';
 
 class AuthForm extends React.Component {

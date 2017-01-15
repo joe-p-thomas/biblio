@@ -14,17 +14,33 @@
 }
 
 .bookshelf {
-  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid lightgrey;
+  width: 120px;
+}
+
+.bookshelf:hover {
+  cursor: pointer;
+  background: lightgrey;
 }
 
 .bookshelf h5 {
   font-weight: 500;
-  width: 100px;
   padding: 3px;
-  border-top: 1px solid lightgrey;
 }
 
-.bookshelf h5:hover {
-  cursor: pointer;
-  background: lightgrey;
+.delete-button {
+  padding: 0;
+  margin: 0;
+  width: 15px;
+  height: 15px;
+  background-color: inherit;
+}
+
+.add-button {
+  color: grey;
+  font-weight: normal;
+  font-size: 12px
 }
