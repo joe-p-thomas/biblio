@@ -1,13 +1,21 @@
 .book-index {
-  width: 50%;
-  margin: 0 auto;
+  margin: 0 auto 0 200px;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .book-index-item {
   padding: 10px;
-  border-bottom: 1px solid lightgrey;
   display: flex;
-  width: 100%
+  width: 250px;
+  margin: 10px;
+}
+
+.book-index-item:hover {
+  box-shadow: 0 0 4px #CCC;
 }
 
 .book-index-item * {

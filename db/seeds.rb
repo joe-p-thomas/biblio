@@ -101,6 +101,15 @@ bookshelf2 = Bookshelf.create(title: 'Science Fiction', user_id: user2.id)
 
 
 #### SHELVINGS ####
+Shelving.create(book_id: book1.id, bookshelf_id: 3)
+Shelving.create(book_id: book2.id, bookshelf_id: 3)
+Shelving.create(book_id: book3.id, bookshelf_id: 3)
+Shelving.create(book_id: book4.id, bookshelf_id: 3)
+Shelving.create(book_id: book5.id, bookshelf_id: 3)
+Shelving.create(book_id: book6.id, bookshelf_id: 3)
+Shelving.create(book_id: book7.id, bookshelf_id: 3)
+Shelving.create(book_id: book8.id, bookshelf_id: 3)
+
 shelving1 = Shelving.create(book_id: book1.id, bookshelf_id: bookshelf1.id)
 shelving2 = Shelving.create(book_id: book2.id, bookshelf_id: bookshelf1.id)
 shelving3 = Shelving.create(book_id: book3.id, bookshelf_id: bookshelf1.id)
