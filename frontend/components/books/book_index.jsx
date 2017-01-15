@@ -9,7 +9,9 @@ class BookIndex extends React.Component {
 
   render() {
     const books = this.props.books.map((book, idx) => (
-      <BookIndexItem key={idx} book={book} />
+      <BookIndexItem key={idx}
+                     book={book}
+                     requestDetail={this.props.requestBookDetail}/>
     ));
     return(
       <div className='book-index'>

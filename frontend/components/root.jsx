@@ -24,7 +24,7 @@ const Root = ({store}) => {
           <Route path='/bookshelves' component={BookshelfIndexContainer}
                  onEnter={ensureLogin}/>
           <Route path='/search' component={SearchResultsContainer}/>
-          <Route path='/book-detail' component={BookDetailContainer}/>
+          <Route path='/book-detail/:id' component={BookDetailContainer}/>
         </Route>
       </Router>
     </Provider>

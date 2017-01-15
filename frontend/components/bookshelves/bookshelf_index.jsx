@@ -34,7 +34,7 @@ class Bookshelves extends React.Component {
     const shownBooks = shownBookshelf.books.map(id => (
       this.props.books[id]
     ));
-
+    
     this.setState({
       selectedShelf: idx,
       selectedShelfTitle: shownBookshelf.title,
@@ -43,9 +43,11 @@ class Bookshelves extends React.Component {
   }
 
   deleteShelf() {
+    this.selectShelf(0);
     this.props.deleteBookshelf(
       this.props.bookshelves[this.state.selectedShelf]
     );
+
   }
 
   handleInput(e) {

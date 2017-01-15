@@ -1,13 +1,22 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class BookIndexItem extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.props.requestDetail(this.props.book).then(
+      this.props.router.push(`/book-detail/${this.props.book.id}`)
+    );
   }
 
   render() {
     return(
-      <div className='book-index-item'>
+      <div className='book-index-item' onClick={this.handleClick}>
         <img src={`http://res.cloudinary.com/biblio/image/upload/w_90/${this.props.book.image_url}`}>
         </img>
         <div>
@@ -19,4 +28,4 @@ class BookIndexItem extends React.Component {
   }
 }
 
-export default BookIndexItem;
+export default withRouter(BookIndexItem);

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import BookIndex from './book_index';
+import { requestBookDetail } from '../../actions/book_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
@@ -7,8 +8,8 @@ const mapStateToProps = (state, ownProps) => ({
   title: ownProps.title
 });
 
-const mapDispatchToProps = (state) => ({
-
+const mapDispatchToProps = (dispatch) => ({
+  requestBookDetail: (book) => dispatch(requestBookDetail(book))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookIndex);
