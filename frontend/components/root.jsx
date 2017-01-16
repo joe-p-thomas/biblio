@@ -7,6 +7,7 @@ import BrowseContainer from './browse/browse_container';
 import BookshelfIndexContainer from './bookshelves/bookshelf_index_container';
 import SearchResultsContainer from './search/search_results_container';
 import BookDetailContainer from './books/book_detail_container';
+import { requestBookDetail } from '../actions/book_actions';
 
 const Root = ({store}) => {
 
@@ -14,6 +15,10 @@ const Root = ({store}) => {
     if (!store.getState().session.currentUser) {
       replace('/');
     }
+  };
+
+  const requestDetail = (nextState, replace, cb) => {
+    store.dispatch(requestBookDetail({id: nextState.params.id})).then(cb);
   };
 
   return(
@@ -24,7 +29,8 @@ const Root = ({store}) => {
           <Route path='/bookshelves' component={BookshelfIndexContainer}
                  onEnter={ensureLogin}/>
           <Route path='/search' component={SearchResultsContainer}/>
-          <Route path='/book-detail/:id' component={BookDetailContainer}/>
+          <Route path='/book-detail/:id' component={BookDetailContainer}
+                 onEnter={requestDetail}/>
         </Route>
       </Router>
     </Provider>
