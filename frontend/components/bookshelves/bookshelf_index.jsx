@@ -84,7 +84,8 @@ class Bookshelves extends React.Component {
            onClick={() => this.selectShelf(idx)}
            className='bookshelf'>
         <h5>{bookshelf.title}</h5>
-        {this.state.selectedShelf === idx ? deleteButton : ''}
+        {this.state.selectedShelf === idx &&  idx !== 0 && idx !== 1 ?
+         deleteButton : ''}
       </div>
     ));
     bookshelves.push(
