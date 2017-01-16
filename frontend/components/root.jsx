@@ -23,11 +23,15 @@ const Root = ({store}) => {
   };
 
   const requestShelves = (nextState, replace, cb) => {
-    store.dispatch(requestUsersBooks()).then(
-      store.dispatch(requestBookshelves())
-    ).then(
-      cb
-    );
+    if (!store.getState().session.currentUser) {
+      replace('/');
+    } else {
+      store.dispatch(requestUsersBooks()).then(
+        store.dispatch(requestBookshelves())
+      ).then(
+        cb
+      );
+    }
   };
 
   return(
@@ -36,7 +40,7 @@ const Root = ({store}) => {
         <Route path='/' component={App}>
           <IndexRoute component={BrowseContainer}/>
           <Route path='/bookshelves' component={BookshelfIndexContainer}
-                 onEnter={ensureLogin} onEnter={requestShelves}/>
+                 onEnter={requestShelves}/>
           <Route path='/search' component={SearchResultsContainer}/>
           <Route path='/book-detail/:id' component={BookDetailContainer}
                  onEnter={requestDetail}/>
