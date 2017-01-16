@@ -21,8 +21,12 @@ class Bookshelves extends React.Component {
   }
 
   componentWillMount() {
-    this.props.requestBookshelves();
-    this.props.requestUsersBooks();
+    this.props.requestBookshelves().then(() => {
+      const shownBooks = this.props.bookshelves[0].books.map(id => (
+        this.props.books[id]
+      ));
+      this.setState({shownBooks});
+    });
   }
 
   componentWillReceiveProps() {
@@ -34,7 +38,7 @@ class Bookshelves extends React.Component {
     const shownBooks = shownBookshelf.books.map(id => (
       this.props.books[id]
     ));
-    
+
     this.setState({
       selectedShelf: idx,
       selectedShelfTitle: shownBookshelf.title,
@@ -60,7 +64,12 @@ class Bookshelves extends React.Component {
       title: this.state.newShelfTitle,
       user_id: this.props.currentUser.id
     };
-    this.props.createBookshelf(newShelf);
+    this.props.createBookshelf(newShelf).then(
+      this.setState({
+        modalOpen: false,
+        newShelfTitle: ''
+      })
+    );
   }
 
   render() {
