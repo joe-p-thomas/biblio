@@ -1,0 +1,21 @@
+# New Book Form
+- connect action creator to new book form
+- have form inputs log changes
+- integrate cloudinary modal
+- on submit, request new book creation
+- either show errors or redirect to book-detail page
+- basic form styling
+
+# Reviews: back end
+- create migration
+- create model
+- create controller
+- create views
+- create routes
+
+# Reviews: front end
+- create api utils
+- create action creators
+- create review reducer
+- create review form
+- update book detail to show reviews

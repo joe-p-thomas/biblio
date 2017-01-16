@@ -18,6 +18,7 @@ class SearchBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({params: ''});
     this.props.search(this.state.params).then(() => {
       this.props.router.push('/search');
     });

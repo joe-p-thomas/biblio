@@ -64,12 +64,13 @@ class Bookshelves extends React.Component {
       title: this.state.newShelfTitle,
       user_id: this.props.currentUser.id
     };
-    this.props.createBookshelf(newShelf).then(
-      this.setState({
-        modalOpen: false,
-        newShelfTitle: ''
-      })
-    );
+    this.props.createBookshelf(newShelf);
+    // .then(
+    //   this.setState({
+    //     modalOpen: false,
+    //     newShelfTitle: ''
+    //   })
+    // );
   }
 
   render() {

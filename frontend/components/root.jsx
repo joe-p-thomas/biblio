@@ -7,6 +7,7 @@ import BrowseContainer from './browse/browse_container';
 import BookshelfIndexContainer from './bookshelves/bookshelf_index_container';
 import SearchResultsContainer from './search/search_results_container';
 import BookDetailContainer from './books/book_detail_container';
+import NewBookContainer from './books/new_book_container';
 import { requestUsersBooks, requestBookDetail } from '../actions/book_actions';
 import { requestBookshelves } from '../actions/bookshelf_actions';
 
@@ -44,6 +45,8 @@ const Root = ({store}) => {
           <Route path='/search' component={SearchResultsContainer}/>
           <Route path='/book-detail/:id' component={BookDetailContainer}
                  onEnter={requestDetail}/>
+          <Route path='/new-book' component={NewBookContainer}
+                 onEnter={ensureLogin}/>
         </Route>
       </Router>
     </Provider>
