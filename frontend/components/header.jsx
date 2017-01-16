@@ -36,7 +36,7 @@ class Header extends React.Component {
     return (
       <div className="nav">
         <div className="left-nav">
-            <h1 className='logo'>
+            <h1 className='logo' onClick={() => this.props.router.push('/')}>
               Biblio
             </h1>
             {bookshelfButton}

@@ -1,3 +1,48 @@
 .new-book {
-  margin: 0 auto 0 200px;
+  width: 350px;
+  margin: 100px auto 0 auto;
+  padding: 15px;
+  background-color: #EFEFEF;
+  box-shadow: 0px 1px 5px #AAAAAA;
+}
+
+.new-book li {
+  list-style: none;
+  font-size: 12px;
+  padding-left: 12px;
+  color: #777;
+}
+
+.new-book-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-book-form * {
+  margin: 10px;
+}
+
+.new-book-form input {
+  font-weight: normal;
+  font-size: 12px;
+  padding: 3px;
+  border: none;
+  border-radius: 1px;
+  box-shadow: inset 0 1px 1px #CCCCCC;
+}
+
+.new-book-form textarea {
+  height: 100px;
+  max-width: 324px;
+  font-weight: normal;
+  font-size: 12px;
+  padding: 3px;
+  border: none;
+  border-radius: 1px;
+  box-shadow: inset 0 1px 1px #CCCCCC;
+}
+
+.new-book-form img {
+  width: 200px;
+  margin: 10px auto;
 }

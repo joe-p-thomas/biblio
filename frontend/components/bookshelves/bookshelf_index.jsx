@@ -47,11 +47,9 @@ class Bookshelves extends React.Component {
   }
 
   deleteShelf() {
-    this.selectShelf(0);
     this.props.deleteBookshelf(
       this.props.bookshelves[this.state.selectedShelf]
-    );
-
+    ).then(() => this.selectShelf(0));
   }
 
   handleInput(e) {
@@ -64,13 +62,12 @@ class Bookshelves extends React.Component {
       title: this.state.newShelfTitle,
       user_id: this.props.currentUser.id
     };
-    this.props.createBookshelf(newShelf);
-    // .then(
-    //   this.setState({
-    //     modalOpen: false,
-    //     newShelfTitle: ''
-    //   })
-    // );
+    this.props.createBookshelf(newShelf).then(() =>
+      this.setState({
+        modalOpen: false,
+        newShelfTitle: ''
+      })
+    );
   }
 
   render() {

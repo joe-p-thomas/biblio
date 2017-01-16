@@ -28,7 +28,7 @@
 }
 
 .logo:hover {
-  cursor: default;
+  cursor: pointer;
 }
 
 

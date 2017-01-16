@@ -16,8 +16,10 @@ class Browse extends React.Component {
 
   render() {
     return(
-      <BookIndexContainer books={this.props.books}
-                          title='Browse All Books'/>
+      <div className='browse'>
+        <BookIndexContainer books={this.props.books}
+                            title='Browse All Books'/>
+      </div>
     );
   }
 }

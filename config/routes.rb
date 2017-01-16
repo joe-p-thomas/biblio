@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :bookshelves, only: [:index, :create, :update, :destroy]
     resources :books, only: [:index, :show, :update, :destroy, :create]
+    resources :reviews, only: [:index, :create, :update, :destroy]
   end
 
 end

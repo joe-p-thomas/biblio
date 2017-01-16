@@ -4,7 +4,8 @@ import { requestBookDetail } from '../../actions/book_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   book: state.bookDetail,
-  url_id: ownProps.params.id
+  url_id: ownProps.params.id,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

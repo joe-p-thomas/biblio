@@ -25,7 +25,7 @@ const Root = ({store}) => {
 
   const requestShelves = (nextState, replace, cb) => {
     if (!store.getState().session.currentUser) {
-      replace('/');
+      replace('/search');
     } else {
       store.dispatch(requestUsersBooks()).then(
         store.dispatch(requestBookshelves())

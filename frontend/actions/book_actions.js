@@ -68,8 +68,9 @@ export const createBook = (book) => (dispatch) => (
     res => {
       dispatch(receiveBook(res));
       dispatch(receiveFormErrors([]));
+      return res;
     },
-    err => receiveFormErrors(err.responseJSON)
+    err => dispatch(receiveFormErrors(err.responseJSON))
   )
 );
 
