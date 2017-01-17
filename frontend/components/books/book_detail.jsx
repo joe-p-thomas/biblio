@@ -50,10 +50,10 @@ class BookDetail extends React.Component {
 
   render() {
     let updateButton;
-    if ( this.props.currentUser.id === this.props.book.user_id) {
+    if ( this.props.currentUser &&
+         this.props.currentUser.id === this.props.book.user_id) {
       updateButton = (
-        <button onClick={() =>
-                  this.props.router.push(`/edit-book/${this.props.book.id}`)}>
+        <button onClick={() => this.props.router.push(`/edit-book/${this.props.book.id}`)}>
           Edit Book
         </button>
       );
@@ -104,8 +104,10 @@ class BookDetail extends React.Component {
             <p>{this.props.book.description}</p>
           </div>
         </div>
-        {updateButton}
-        {bookshelfButton}
+        <div>
+          {updateButton}
+          {bookshelfButton}
+        </div>
         <Modal isOpen={this.state.bookshelfModalOpen}
                onRequestClose={() => this.setState({bookshelfModalOpen: false})}
                className='modal'

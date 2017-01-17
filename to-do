@@ -23,7 +23,7 @@ x create views
 x create routes
 
 # Reviews: front end
-- create api utils
+x create api utils
 - create action creators
 - create review reducer
 - create review form

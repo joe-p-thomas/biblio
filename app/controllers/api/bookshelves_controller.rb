@@ -1,8 +1,12 @@
 class Api::BookshelvesController < ApplicationController
 
   def index
-    @bookshelves = Bookshelf.where("user_id = ?", current_user.id)
-    render 'api/bookshelves/index'
+    if current_user
+      @bookshelves = Bookshelf.where("user_id = ?", current_user.id)
+      render 'api/bookshelves/index'
+    else
+      render json: {}, status: 200
+    end
   end
 
   def create

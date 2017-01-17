@@ -10,9 +10,7 @@ class BookIndexItem extends React.Component {
   }
 
   handleClick() {
-    this.props.requestDetail(this.props.book).then(
-      this.props.router.push(`/book-detail/${this.props.book.id}`)
-    );
+    this.props.router.push(`/book-detail/${this.props.book.id}`);
   }
 
   removeShelving(e) {

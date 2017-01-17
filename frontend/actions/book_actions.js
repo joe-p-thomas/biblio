@@ -81,7 +81,7 @@ export const updateBook = (book) => (dispatch) => (
       dispatch(receiveFormErrors([]));
       return res;
     },
-    err => receiveFormErrors(err.responseJSON)
+    err => dispatch(receiveFormErrors(err.responseJSON))
   )
 );
 
