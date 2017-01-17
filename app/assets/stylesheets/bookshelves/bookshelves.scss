@@ -44,3 +44,17 @@
   font-weight: normal;
   font-size: 12px
 }
+
+#delete-shelving {
+  visibility: hidden;
+  position: relative;
+  left: 7px;
+  margin: 0;
+  left-margin: 35px;
+  padding: 0px 5px;
+  font-size: 12px;
+}
+
+.book-index-item:hover #delete-shelving {
+  visibility: visible;
+}

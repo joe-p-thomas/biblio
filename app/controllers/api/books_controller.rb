@@ -48,6 +48,7 @@ class Api::BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :description, :image_url)
+    params.require(:book).permit(:title, :author, :description, :image_url,
+                                 shelving_ids: [])
   end
 end

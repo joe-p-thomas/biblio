@@ -29,8 +29,17 @@ class Bookshelves extends React.Component {
     });
   }
 
-  componentWillReceiveProps() {
-    this.setState({});
+  componentWillReceiveProps(nextProps) {
+    let selectedShelf = (this.state.selectedShelf >= nextProps.bookshelves.length) ?
+      this.state.selectedShelf - 1 : this.state.selectedShelf;
+    const shownBooks = nextProps.bookshelves[selectedShelf].books.map(id => (
+      this.props.books[id]
+    ));
+    this.setState({
+      shownBooks,
+      selectedShelf,
+      selectedShelfTitle: nextProps.bookshelves[selectedShelf].title
+    });
   }
 
   selectShelf(idx) {
@@ -49,7 +58,7 @@ class Bookshelves extends React.Component {
   deleteShelf() {
     this.props.deleteBookshelf(
       this.props.bookshelves[this.state.selectedShelf]
-    ).then(() => this.selectShelf(0));
+    );
   }
 
   handleInput(e) {
@@ -108,7 +117,8 @@ class Bookshelves extends React.Component {
         </div>
 
         <BookIndexContainer books={this.state.shownBooks}
-                            title={this.state.selectedShelfTitle}/>
+                            title={this.state.selectedShelfTitle}
+                            bookshelf={this.props.bookshelves[this.state.selectedShelf]}/>
 
         <Modal isOpen={this.state.modalOpen}
                onRequestClose={() => this.setState({modalOpen: false})}

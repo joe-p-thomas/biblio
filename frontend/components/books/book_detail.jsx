@@ -6,16 +6,50 @@ class BookDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bookshelfModalOpen: false
+      bookshelfModalOpen: false,
+      bookshelves: this.props.bookshelves
     };
+
+    this.handleInput = this.handleInput.bind(this);
+    this.updateShelvings = this.updateShelvings.bind(this);
   }
 
   componentWillReceiveProps() {
     this.setState({});
   }
 
+  handleInput(e) {
+    const shelfId = e.target.value;
+    let newShelves = this.state.bookshelves;
+    const idx = newShelves[shelfId].books.indexOf(this.props.book.id);
+    if ( idx === -1 ) {
+      newShelves[shelfId].books.push(this.props.book.id);
+    } else {
+      newShelves[shelfId].books.splice(idx, 1);
+    }
+    this.setState({
+      bookshelves: newShelves
+    });
+  }
+
+  updateShelvings(e) {
+    e.preventDefault();
+    Object.values(this.state.bookshelves).forEach((bookshelf) => {
+      let book_ids = bookshelf.books;
+      if ( book_ids.length === 0) {
+        book_ids = [''];
+      }
+      this.props.updateBookshelf({
+        id: bookshelf.id,
+        book_ids
+      });
+    });
+    this.setState({bookshelfModalOpen: false});
+  }
+
   render() {
     let updateButton;
+
     let bookshelfButton;
     if ( this.props.currentUser ) {
       bookshelfButton = (
@@ -26,6 +60,24 @@ class BookDetail extends React.Component {
     } else {
       bookshelfButton = '';
     }
+    const book = this.props.book;
+    const shelvingCheckboxes = Object.values(this.state.bookshelves).map(
+      (bookshelf) => {
+        let checked = false;
+        if ( bookshelf.books.includes(book.id) ) {
+          checked = true;
+        }
+        return(
+          <label key={bookshelf.id}>{bookshelf.title}:
+            <input type='checkbox'
+                   name='shelving_ids[]'
+                   value={bookshelf.id}
+                   key={bookshelf.id}
+                   checked={checked}
+                   onChange={this.handleInput}></input>
+          </label>
+        );
+    });
 
     return (
       <div className='book-detail-container'>
@@ -40,14 +92,18 @@ class BookDetail extends React.Component {
             <p>{this.props.book.description}</p>
           </div>
         </div>
+
         {bookshelfButton}
         <Modal isOpen={this.state.bookshelfModalOpen}
                onRequestClose={() => this.setState({bookshelfModalOpen: false})}
                className='modal'
                style={modalStyle}
                contentLabel='Modal'>
-          <h2>testing</h2>
-
+          <form className='shelving-form'>
+            <h4>Bookshelves</h4>
+            {shelvingCheckboxes}
+            <button onClick={this.updateShelvings}>Submit</button>
+          </form>
         </Modal>
       </div>
     );

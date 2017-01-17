@@ -1,5 +1,5 @@
 class Api::BookshelvesController < ApplicationController
-  
+
   def index
     @bookshelves = Bookshelf.where("user_id = ?", current_user.id)
     render 'api/bookshelves/index'
@@ -37,7 +37,7 @@ class Api::BookshelvesController < ApplicationController
   private
 
   def bookshelf_params
-    params.require(:bookshelf).permit(:title)
+    params.require(:bookshelf).permit(:id, :title, book_ids: [])
   end
 
 end

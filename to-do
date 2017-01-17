@@ -12,8 +12,8 @@ x basic form styling
 - have button on book detail view
 
 # Shelvings
-- Add books to shelf (book detail)
-- Delete books from shelf (bookshelf detail)
+x Add books to shelf (book detail)
+x Delete books from shelf (bookshelf detail)
 
 # Reviews: back end
 x create migration

@@ -5,7 +5,7 @@ import { requestBookshelves,
          deleteBookshelf } from '../../actions/bookshelf_actions';
 import { requestUsersBooks } from '../../actions/book_actions';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
   bookshelves: Object.keys(state.bookshelves).map(id => state.bookshelves[id]),
   books: state.books,
