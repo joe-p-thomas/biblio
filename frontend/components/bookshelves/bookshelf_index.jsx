@@ -132,7 +132,8 @@ class Bookshelves extends React.Component {
           <form>
             <input placeholder='Title'
                    onChange={this.handleInput}
-                   value={this.state.newShelfTitle}></input>
+                   value={this.state.newShelfTitle}
+                   className='new-bookshelf-form'></input>
             <button onClick={this.handleSubmit}>Create New Shelf</button>
           </form>
         </Modal>

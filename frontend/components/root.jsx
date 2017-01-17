@@ -8,6 +8,7 @@ import BookshelfIndexContainer from './bookshelves/bookshelf_index_container';
 import SearchResultsContainer from './search/search_results_container';
 import BookDetailContainer from './books/book_detail_container';
 import NewBookContainer from './books/new_book_container';
+import EditBookContainer from './books/edit_book_container';
 import { requestUsersBooks, requestBookDetail } from '../actions/book_actions';
 import { requestBookshelves } from '../actions/bookshelf_actions';
 
@@ -20,18 +21,27 @@ const Root = ({store}) => {
   };
 
   const requestDetail = (nextState, replace, cb) => {
-    store.dispatch(requestBookDetail({id: nextState.params.id})).then(cb);
+    store.dispatch(requestBookDetail({id: nextState.params.id}))
+      .then(store.dispatch(requestBookshelves()))
+      .then(cb);
+  };
+
+  const requestEditDetail = (nextState, replace, cb) => {
+    if (!store.getState().session.currentUser) {
+      replace('/');
+    } else {
+      store.dispatch(requestBookDetail({id: nextState.params.id}))
+        .then(cb);
+    }
   };
 
   const requestShelves = (nextState, replace, cb) => {
     if (!store.getState().session.currentUser) {
       replace('/search');
     } else {
-      store.dispatch(requestUsersBooks()).then(
-        store.dispatch(requestBookshelves())
-      ).then(
-        cb
-      );
+      store.dispatch(requestUsersBooks())
+      .then(store.dispatch(requestBookshelves()))
+      .then(cb);
     }
   };
 
@@ -47,6 +57,8 @@ const Root = ({store}) => {
                  onEnter={requestDetail}/>
           <Route path='/new-book' component={NewBookContainer}
                  onEnter={ensureLogin}/>
+          <Route path='/edit-book/:id' component={EditBookContainer}
+                 onEnter={requestEditDetail}/>
         </Route>
       </Router>
     </Provider>

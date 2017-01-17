@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import Modal from 'react-modal';
 import modalStyle from '../../modal_style';
 
@@ -49,6 +50,16 @@ class BookDetail extends React.Component {
 
   render() {
     let updateButton;
+    if ( this.props.currentUser.id === this.props.book.user_id) {
+      updateButton = (
+        <button onClick={() =>
+                  this.props.router.push(`/edit-book/${this.props.book.id}`)}>
+          Edit Book
+        </button>
+      );
+    } else {
+      updateButton = '';
+    }
 
     let bookshelfButton;
     if ( this.props.currentUser ) {
@@ -60,6 +71,7 @@ class BookDetail extends React.Component {
     } else {
       bookshelfButton = '';
     }
+
     const book = this.props.book;
     const shelvingCheckboxes = Object.values(this.state.bookshelves).map(
       (bookshelf) => {
@@ -92,7 +104,7 @@ class BookDetail extends React.Component {
             <p>{this.props.book.description}</p>
           </div>
         </div>
-
+        {updateButton}
         {bookshelfButton}
         <Modal isOpen={this.state.bookshelfModalOpen}
                onRequestClose={() => this.setState({bookshelfModalOpen: false})}
@@ -110,4 +122,4 @@ class BookDetail extends React.Component {
   }
 }
 
-export default BookDetail;
+export default withRouter(BookDetail);

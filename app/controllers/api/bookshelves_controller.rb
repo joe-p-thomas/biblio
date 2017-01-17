@@ -18,7 +18,7 @@ class Api::BookshelvesController < ApplicationController
   def update
     @bookshelf = Bookshelf.find(params[:id])
     if @bookshelf.user_id == current_user.id &&
-       @bookshelf.update_attributes(bookshelf_params)
+      @bookshelf.update_attributes(bookshelf_params)
       render 'api/bookshelves/show'
     else
       render json: @bookshelf.errors.full_messages, status: 401

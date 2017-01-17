@@ -9,6 +9,15 @@ class NewBook extends React.Component {
       description: '',
       image_url: ''
     };
+    if ( props.book ) {
+      this.state = {
+        id: props.book.id,
+        title: props.book.title,
+        author: props.book.author,
+        description: props.book.description,
+        image_url: props.book.image_url
+      };
+    }
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +30,7 @@ class NewBook extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createBook(this.state).then(
+    this.props.action(this.state).then(
       (res) => {
         let id = Object.values(res)[0].id;
         this.props.router.push(`/book-detail/${id}`);
@@ -42,6 +51,9 @@ class NewBook extends React.Component {
   }
 
   render() {
+    const heading = (this.props.method === 'Update Book') ?
+      'Edit existing book' : 'Create a new book';
+
     const errors = this.props.errors.map((err, idx) => (
       <li key={idx}>-{err}</li>
     ));
@@ -60,7 +72,7 @@ class NewBook extends React.Component {
 
     return(
       <div className='new-book'>
-        <h2>Create a new book</h2>
+        <h2>{heading}</h2>
         <ul>
           {errors}
         </ul>
@@ -77,10 +89,11 @@ class NewBook extends React.Component {
                  name='author'></input>
           <textarea onChange={this.handleInput}
                     placeholder='Description'
-                    name='description'>{this.props.description}</textarea>
+                    name='description'
+                    value={this.state.description}></textarea>
           {uploadedImage}
           <button onClick={this.openCloudinary}>{imgButtonText}</button>
-          <button onClick={this.handleSubmit}>Submit Book</button>
+          <button onClick={this.handleSubmit}>{this.props.method}</button>
         </form>
       </div>
     );

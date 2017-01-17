@@ -5,11 +5,11 @@ x integrate cloudinary modal
 x on submit, request new book creation
 x either show errors or redirect to book-detail page
 x basic form styling
-- have another way into creating new book
+x have another way into creating new book (add button to nav bar)
 
 # Update Book Form
-- build form
-- have button on book detail view
+x build form
+x have button on book detail view
 
 # Shelvings
 x Add books to shelf (book detail)
@@ -28,3 +28,6 @@ x create routes
 - create review reducer
 - create review form
 - update book detail to show reviews
+
+# Seed
+- check out seed_dump gem

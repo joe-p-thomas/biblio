@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
 import NewBook from './new_book';
-import { createBook } from'../../actions/book_actions';
+import { updateBook } from'../../actions/book_actions';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   errors: state.formErrors,
-  method: 'Submit Book'
+  book: state.bookDetail,
+  method: 'Update Book'
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  action: (book) => dispatch(createBook(book))
+  action: (book) => dispatch(updateBook(book))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewBook);

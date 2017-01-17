@@ -38,7 +38,12 @@ class Api::BooksController < ApplicationController
   end
 
   def update
-
+    @book = Book.find(params[:id])
+    if @book.update_attributes(book_params)
+      render 'api/books/show'
+    else
+      render json: @book.errors.full_messages, status: 401
+    end
   end
 
   def destroy
