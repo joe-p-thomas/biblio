@@ -3,6 +3,7 @@ import SessionReducer from './session_reducer';
 import BookReducer from './book_reducer';
 import BookshelfReducer from './bookshelf_reducer';
 import BookDetailReducer from './book_detail_reducer';
+import ReviewReducer from './review_reducer';
 import FormErrorReducer from './form_error_reducer';
 
 const RootReducer = combineReducers({
@@ -10,6 +11,7 @@ const RootReducer = combineReducers({
   books: BookReducer,
   bookshelves: BookshelfReducer,
   bookDetail: BookDetailReducer,
+  reviews: ReviewReducer,
   formErrors: FormErrorReducer
 });
 

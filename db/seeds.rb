@@ -195,3 +195,6 @@ shelving6 = Shelving.create(book_id: book6.id, bookshelf_id: bookshelf1.id)
 
 shelving7 = Shelving.create(book_id: book10.id, bookshelf_id: bookshelf2.id)
 shelving8 = Shelving.create(book_id: book11.id, bookshelf_id: bookshelf2.id)
+
+#### REVIEWS ####
+Review.create(book_id: book1.id, user_id: user1.id, rating: 5)

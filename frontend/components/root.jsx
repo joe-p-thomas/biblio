@@ -11,6 +11,7 @@ import NewBookContainer from './books/new_book_container';
 import EditBookContainer from './books/edit_book_container';
 import { requestUsersBooks, requestBookDetail } from '../actions/book_actions';
 import { requestBookshelves } from '../actions/bookshelf_actions';
+import { requestReviews } from '../actions/review_actions';
 
 const Root = ({store}) => {
 
@@ -23,6 +24,7 @@ const Root = ({store}) => {
   const requestDetail = (nextState, replace, cb) => {
     store.dispatch(requestBookDetail({id: nextState.params.id}))
       .then(store.dispatch(requestBookshelves()))
+      .then(store.dispatch(requestReviews(nextState.params.id)))
       .then(cb);
   };
 

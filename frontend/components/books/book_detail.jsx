@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import Modal from 'react-modal';
 import modalStyle from '../../modal_style';
+import ReviewsContainer from '../review/reviews_container';
 
 class BookDetail extends React.Component {
   constructor(props) {
@@ -72,17 +73,6 @@ class BookDetail extends React.Component {
       bookshelfButton = '';
     }
 
-    let reviewButton;
-    if ( this.props.currentUser) {
-      reviewButton = (
-        <button onClick={() => this.setState({})}>
-          Review Book
-        </button>
-      );
-    } else {
-      reviewButton = '';
-    }
-
     const book = this.props.book;
     const shelvingCheckboxes = Object.values(this.state.bookshelves).map(
       (bookshelf) => {
@@ -119,12 +109,11 @@ class BookDetail extends React.Component {
         <div>
           {updateButton}
           {bookshelfButton}
-          {reviewButton}
         </div>
-        <h3>Reviews</h3>
+        <ReviewsContainer />
 
 
-        
+
         <Modal isOpen={this.state.bookshelfModalOpen}
                onRequestClose={() => this.setState({bookshelfModalOpen: false})}
                className='modal'
