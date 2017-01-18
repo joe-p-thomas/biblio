@@ -77,6 +77,78 @@ book9 = Book.create(title: 'A Dance with Dragons',
                                   Fleeing from Westeros with a price on his head, Tyrion Lannister, too, is making his way to Daenerys. But his newest allies in this quest are not the rag-tag band they seem, and at their heart lies one who could undo Daenerys’s claim to Westeros forever.
                                   Meanwhile, to the north lies the mammoth Wall of ice and stone—a structure only as strong as those guarding it. There, Jon Snow, 998th Lord Commander of the Night’s Watch, will face his greatest challenge. For he has powerful foes not only within the Watch but also beyond, in the land of the creatures of ice.')
 
+book = Book.create(title: 'The Lies of Locke Lamora',
+                   author: 'Scott Lynch',
+                   user_id: 1,
+                   image_url: '51tpIK8K_2BtL_dfcbei',
+                   description: 'temp')
+
+book = Book.create(title: 'Red Seas Under Red Skies',
+                   author: 'Scott Lynch',
+                   user_id: 1,
+                   image_url: '887877_q9oehf',
+                   description: 'temp')
+
+book = Book.create(title: 'The Republic of Thieves',
+                   author: 'Scott Lynch',
+                   user_id: 1,
+                   image_url: '220px-Republic_of_Thieves_by_Scott_Lynch_Cover_fngibs',
+                   description: 'temp')
+
+book = Book.create(title: 'American Gods',
+                   author: 'Neil Gaiman',
+                   user_id: 1,
+                   image_url: '51s8nymjzwl_mz216q',
+                   description: 'temp')
+
+book = Book.create(title: 'Ready Player One',
+                   author: 'Ernest Cline',
+                   user_id: 1,
+                   image_url: 'Ready_Player_One_cover_dxkt1e',
+                   description: 'temp')
+
+book = Book.create(title: 'The Left Hand of Darkness',
+                   author: 'Ursula K. Le Guin',
+                   user_id: 1,
+                   image_url: '34e1dee4900b7334725714c1e9e533e8_jmfike',
+                   description: 'temp')
+
+book = Book.create(title: 'The Fountainhead',
+                   author: 'Ayn Rand',
+                   user_id: 1,
+                   image_url: '5_the-fountainhead-by-ayn-rand_xosknh',
+                   description: 'temp')
+
+book = Book.create(title: 'The Restaurant at the End of the Universe',
+                   author: 'Douglas Adams',
+                   user_id: 1,
+                   image_url: '8695_jehmwh',
+                   description: 'temp')
+
+book = Book.create(title: 'A Walk in the Woods',
+                   author: 'Bill Bryson',
+                   user_id: 1,
+                   image_url: '51FH8CFR32L_h582ha',
+                   description: 'temp')
+
+book = Book.create(title: 'The Name of the Wind',
+                   author: 'Patrick Rothfuss',
+                   user_id: 1,
+                   image_url: 'cover_277_ha1xib',
+                   description: 'temp')
+
+book = Book.create(title: "The Wise Man's Fear",
+                   author: 'Patrick Rothfuss',
+                   user_id: 1,
+                   image_url: 'cover-paperback-wise-man_277_bkgbrh',
+                   description: 'temp')
+
+book = Book.create(title: 'Brave New World',
+                   author: 'Aldous Huxley',
+                   user_id: 1,
+                   image_url: 'BraveNewWorld_FirstEdition_qlrmz2',
+                   description: 'temp')
+
 ## Science Fiction ##
 book10 = Book.create(title: 'Stranger in a Strange Land',
                    author: 'Robert A Heinlein',

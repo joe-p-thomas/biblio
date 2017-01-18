@@ -24,7 +24,7 @@ x create routes
 
 # Reviews: front end
 x create api utils
-- create action creators
+x create action creators
 - create review reducer
 - create review form
 - update book detail to show reviews

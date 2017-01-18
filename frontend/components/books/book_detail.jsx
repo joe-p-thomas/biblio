@@ -72,6 +72,17 @@ class BookDetail extends React.Component {
       bookshelfButton = '';
     }
 
+    let reviewButton;
+    if ( this.props.currentUser) {
+      reviewButton = (
+        <button onClick={() => this.setState({})}>
+          Review Book
+        </button>
+      );
+    } else {
+      reviewButton = '';
+    }
+
     const book = this.props.book;
     const shelvingCheckboxes = Object.values(this.state.bookshelves).map(
       (bookshelf) => {
@@ -104,10 +115,16 @@ class BookDetail extends React.Component {
             <p>{this.props.book.description}</p>
           </div>
         </div>
+
         <div>
           {updateButton}
           {bookshelfButton}
+          {reviewButton}
         </div>
+        <h3>Reviews</h3>
+
+
+        
         <Modal isOpen={this.state.bookshelfModalOpen}
                onRequestClose={() => this.setState({bookshelfModalOpen: false})}
                className='modal'
