@@ -8,3 +8,21 @@
 .review-item * {
   margin: 10px;
 }
+
+.review-form {
+  width: 200px;
+}
+
+.review-form > * {
+  margin: 7px auto;
+  width: 100%
+}
+
+.review-form h5 {
+  font-weight: 500;
+}
+
+.review-form textarea {
+  max-width: 97%;
+  height: 75px;
+}

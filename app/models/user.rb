@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   has_many :bookshelves
   has_many :books, through: :bookshelves
+  has_many :reviews
 
   attr_reader :password
 

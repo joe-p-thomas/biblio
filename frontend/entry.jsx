@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  // TODO: 
+  // TODO:
   window.store = store;
 
   Modal.setAppElement(root);

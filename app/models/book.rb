@@ -5,4 +5,5 @@ class Book < ActiveRecord::Base
   belongs_to :user
 
   has_many :shelvings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 end

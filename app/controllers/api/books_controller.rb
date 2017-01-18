@@ -24,6 +24,9 @@ class Api::BooksController < ApplicationController
 
   def book_detail
     @book = Book.find(params[:id])
+    if current_user
+      @review = @book.reviews.where('user_id = ?', current_user.id).first
+    end
     render 'api/books/book_detail'
   end
 

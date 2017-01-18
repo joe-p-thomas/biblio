@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import BookDetail from './book_detail';
 import { requestBookDetail } from '../../actions/book_actions';
-import { updateBookshelf } from '../../actions/bookshelf_actions';
+import { requestBookshelves,
+         updateBookshelf } from '../../actions/bookshelf_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   book: state.bookDetail,
@@ -12,7 +13,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   requestBookDetail: (book) => dispatch(requestBookDetail(book)),
-  updateBookshelf: (bookshelf) =>  dispatch(updateBookshelf(bookshelf))
+  updateBookshelf: (bookshelf) =>  dispatch(updateBookshelf(bookshelf)),
+  requestBookshelves: () => dispatch(requestBookshelves())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookDetail);

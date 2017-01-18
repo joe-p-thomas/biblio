@@ -16,8 +16,13 @@ class BookDetail extends React.Component {
     this.updateShelvings = this.updateShelvings.bind(this);
   }
 
-  componentWillReceiveProps() {
-    this.setState({});
+  componentWillReceiveProps(nextProps) {
+    if ( !this.props.currentUser && nextProps.currentUser) {
+      this.props.requestBookshelves();
+    }
+    if ( this.props.bookshelves !== nextProps.bookshelves ) {
+      this.setState({bookshelves: nextProps.bookshelves});
+    }
   }
 
   handleInput(e) {
