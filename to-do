@@ -9,8 +9,8 @@
 - restyle so that it no longer looks like modal
 
 # Reviews
-- When user first creates review, button does not switch to edit review until refresh
-- add functionality to delete review
+x When user first creates review, button does not switch to edit review until refresh
+x add functionality to delete review
 x displayed reviews could have stars instead of number
 - further tweak styling
 

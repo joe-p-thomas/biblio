@@ -30,7 +30,7 @@ class Reviews extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if ( this.props.usersReview !== nextProps.usersReview &&
-           nextProps.usersReview) {
+         nextProps.usersReview) {
       this.setState({review: nextProps.usersReview});
     }
   }
