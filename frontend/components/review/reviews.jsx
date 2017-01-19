@@ -15,15 +15,24 @@ class Reviews extends React.Component {
         body: ''
       }
     };
-    window.state = this.state;
     if ( this.props.usersReview ) {
+      this.state.review.id = this.props.usersReview.id;
       this.state.review = this.props.usersReview;
       this.state.review.body = this.state.review.body || '';
     }
+    window.review = this;
 
     this.handleBodyInput = this.handleBodyInput.bind(this);
     this.handleRatingInput = this.handleRatingInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if ( this.props.usersReview !== nextProps.usersReview &&
+           nextProps.usersReview) {
+      this.setState({review: nextProps.usersReview});
+    }
   }
 
   handleBodyInput(e) {
@@ -49,6 +58,19 @@ class Reviews extends React.Component {
     }
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteReview(this.props.usersReview)
+      .then(() => this.setState({
+        modalOpen: false,
+        review: {
+          book_id: this.props.bookId,
+          rating: null,
+          body: ''
+        }
+      }));
+  }
+
   render() {
     let reviewButton;
     if ( !this.props.currentUser) {
@@ -63,6 +85,15 @@ class Reviews extends React.Component {
       reviewButton = (
         <button onClick={() => this.setState({modalOpen: true})}>
           Review Book
+        </button>
+      );
+    }
+
+    let deleteButton = '';
+    if ( this.props.usersReview ) {
+      deleteButton = (
+        <button onClick={this.handleDelete}>
+          Delete Review
         </button>
       );
     }
@@ -120,6 +151,7 @@ class Reviews extends React.Component {
                 </div>
 
                 <button onClick={this.handleSubmit}>Submit</button>
+                {deleteButton}
               </form>
         </Modal>
       </div>

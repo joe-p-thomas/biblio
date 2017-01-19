@@ -1,6 +1,9 @@
+# Browse view
+- should display books in random order each time
+
 # Book Index Item
 - consider tweaking display so that title and author are below cover
-- consider displaying average rating score for each book
+- users can scale the size of the book index items
 
 # New Book Form
 - restyle so that it no longer looks like modal
@@ -9,6 +12,18 @@
 - When user first creates review, button does not switch to edit review until refresh
 - add functionality to delete review
 x displayed reviews could have stars instead of number
+- further tweak styling
 
 # Seed
 - seed the database
+
+# Random
+- remove window.store from entry.jsx
+- fix console errors from heroku
+- don't let heroku dyno sleep
+- consider getting custom domain name
+- production readme
+- check out how many times db is being hit
+
+# Search
+- clear text from search bar when leaving search view

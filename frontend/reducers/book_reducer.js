@@ -12,7 +12,7 @@ const BookReducer = (state = {}, action) => {
       return newState;
     case REMOVE_BOOK:
       newState = merge({}, state);
-      newState.delete(action.book.id);
+      delete newState[action.book.id];
       return newState;
     default:
       return state;
