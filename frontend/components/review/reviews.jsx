@@ -20,7 +20,7 @@ class Reviews extends React.Component {
       this.state.review = this.props.usersReview;
       this.state.review.body = this.state.review.body || '';
     }
-    
+
     this.handleBodyInput = this.handleBodyInput.bind(this);
     this.handleRatingInput = this.handleRatingInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -98,20 +98,23 @@ class Reviews extends React.Component {
     }
 
     const reviewList = (
-      Object.values(this.props.reviews).map((review) => (
-        <li className='review-item'
-            key={review.id}>
-          <h4>{review.userName}</h4>
+      Object.values(this.props.reviews).map((review) => {
+        return (
+          <li className='review-item'
+              key={review.id}>
+            <h4>{review.userName}</h4>
             <StarRatingComponent
+               className='stars'
                name="rating"
                starCount={5}
                value={review.rating}
                starColor={'#e6994c'}
                emptyStarColor={'#ccc'}
                editing={false}/>
-          <p>review: {review.body || ''}</p>
-        </li>
-      ))
+             <p>{review.body}</p>
+          </li>
+        );
+      })
     );
     return(
       <div className='reviews-container'>

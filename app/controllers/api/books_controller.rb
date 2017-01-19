@@ -1,7 +1,7 @@
 class Api::BooksController < ApplicationController
 
   def index
-    @books = Book.limit(40).order("RANDOM()")
+    @books = Book.all
     render 'api/books/index'
   end
 
@@ -24,6 +24,7 @@ class Api::BooksController < ApplicationController
 
   def book_detail
     @book = Book.find(params[:id])
+    @avg_rating = @book.reviews.average(:rating).to_f.round(2)
     if current_user
       @review = @book.reviews.where('user_id = ?', current_user.id).first
     end

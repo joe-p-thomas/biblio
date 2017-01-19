@@ -6,7 +6,7 @@
 - restyle so that it no longer looks like modal
 
 # Book Detail
-- display average rating
+x display average rating
 
 # Reviews
 x When user first creates review, button does not switch to edit review until refresh
@@ -21,7 +21,7 @@ x displayed reviews could have stars instead of number
 x remove window.store from entry.jsx
 x fix console errors from heroku
 - don't let heroku dyno sleep
-- consider getting custom domain name
+x consider getting custom domain name
 - production readme
 - check out how many times db is being hit
 

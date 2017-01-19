@@ -97,6 +97,13 @@ class BookDetail extends React.Component {
         );
     });
 
+    let avgRating;
+    if ( this.props.book.avgRating > 0 ) {
+        avgRating = (
+          <p>Avg. Rating: {this.props.book.avgRating}</p>
+        );
+    }
+
     return (
       <div className='book-detail-container'>
         <div className='book-detail'>
@@ -109,6 +116,7 @@ class BookDetail extends React.Component {
           <div className='book-detail-text'>
             <h2>{this.props.book.title}</h2>
             <h4>{this.props.book.author}</h4>
+            {avgRating}
             <p>{this.props.book.description}</p>
           </div>
         </div>
