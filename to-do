@@ -1,6 +1,3 @@
-# Browse view
-- should display books in random order each time
-
 # Book Index Item
 - consider tweaking display so that title and author are below cover
 - users can scale the size of the book index items
