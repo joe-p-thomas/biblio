@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import { requestBooks } from '../../actions/book_actions';
 import Browse from './browse';
+import shuffle from '../../helpers/shuffle';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
-  books: Object.keys(state.books).map(id => state.books[id])
+  books: shuffle(Object.keys(state.books).map(id => state.books[id]))
 });
 
 const mapDispatchToProps = (dispatch) => ({

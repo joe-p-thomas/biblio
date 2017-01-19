@@ -1,7 +1,7 @@
 class Api::BooksController < ApplicationController
 
   def index
-    @books = Book.all
+    @books = Book.limit(40).order("RANDOM()")
     render 'api/books/index'
   end
 

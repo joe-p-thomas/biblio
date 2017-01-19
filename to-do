@@ -8,6 +8,9 @@
 # New Book Form
 - restyle so that it no longer looks like modal
 
+# Book Detail
+- display average rating
+
 # Reviews
 x When user first creates review, button does not switch to edit review until refresh
 x add functionality to delete review
@@ -18,8 +21,8 @@ x displayed reviews could have stars instead of number
 - seed the database
 
 # Random
-- remove window.store from entry.jsx
-- fix console errors from heroku
+x remove window.store from entry.jsx
+x fix console errors from heroku
 - don't let heroku dyno sleep
 - consider getting custom domain name
 - production readme
