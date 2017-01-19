@@ -5,6 +5,12 @@
   width: 150px;
 }
 
+.bookshelf-sidebar .title {
+  font-family: 'Alegreya', serif;
+  font-weight: bold;
+  font-size: 18px
+}
+
 .bookshelf-sidebar h4 {
   padding-bottom: 5px;
 }
@@ -14,11 +20,12 @@
 }
 
 .new-bookshelf-form {
-  width: 95%
+  width: 95%;
+  padding: 6px 0 6px 3px;
 }
 
-.new-bookshelf-form {
-  padding: 6px 0 6px 3px;
+.new-bookshelf-form input {
+  font-size: 14px;
 }
 
 .bookshelf {
@@ -51,6 +58,15 @@
   color: grey;
   font-weight: normal;
   font-size: 12px
+}
+
+.bookshelf-form-title {
+  font-family: 'Alegreya', serif;
+  font-size: 18px;
+}
+
+.bookshelf-form * {
+  margin: 7px 0;
 }
 
 #delete-shelving {

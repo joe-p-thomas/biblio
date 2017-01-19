@@ -43,7 +43,7 @@ class BookIndexItem extends React.Component {
 
     return(
       <div className='book-index-item' onClick={this.handleClick}>
-        <img src={`http://res.cloudinary.com/biblio/image/upload/w_90/${this.props.book.image_url}`}>
+        <img src={`http://res.cloudinary.com/biblio/image/upload/w_100/${this.props.book.image_url}`}>
         </img>
         <div>
           <h4>{this.props.book.title}</h4>

@@ -110,7 +110,7 @@ class Bookshelves extends React.Component {
     return(
       <div>
         <div className='bookshelf-sidebar'>
-          <h4>My Bookshelves</h4>
+          <h4 className='title'>My Bookshelves</h4>
           <ul className='bookshelf-list'>
             {bookshelves}
           </ul>
@@ -125,11 +125,11 @@ class Bookshelves extends React.Component {
                className='modal'
                style={modalStyle}
                contentLabel='Modal'>
-          <h4>New Bookshelf</h4>
+          <h4 className='bookshelf-form-title'>New Bookshelf</h4>
           <ul>
             {errors}
           </ul>
-          <form>
+          <form className='bookshelf-form'>
             <input placeholder='Title'
                    onChange={this.handleInput}
                    value={this.state.newShelfTitle}

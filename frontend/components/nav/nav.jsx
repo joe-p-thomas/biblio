@@ -61,8 +61,10 @@ class Nav extends React.Component {
                className='modal'
                style={modalStyle}
                contentLabel='Modal'>
-          <h3>Access Denied</h3>
-          <p>Please log in or sign up to view the page.</p>
+          <div className='auth-required'>
+            <h3>Access Denied</h3>
+            <p>Please log in or sign up to view the page.</p>
+          </div>
         </Modal>
       </div>
     );

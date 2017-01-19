@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import StarRatingComponent from 'react-star-rating-component';
 import modalStyle from '../../modal_style';
 import { merge } from 'lodash';
 
@@ -14,6 +15,7 @@ class Reviews extends React.Component {
         body: ''
       }
     };
+    window.state = this.state;
     if ( this.props.usersReview ) {
       this.state.review = this.props.usersReview;
       this.state.review.body = this.state.review.body || '';
@@ -30,9 +32,9 @@ class Reviews extends React.Component {
     this.setState({review});
   }
 
-  handleRatingInput(e) {
+  handleRatingInput(rating) {
     const review =
-      merge({}, this.state.review, {rating: parseInt(e.target.value)});
+      merge({}, this.state.review, {rating});
     this.setState({review});
   }
 
@@ -90,41 +92,28 @@ class Reviews extends React.Component {
                style={modalStyle}
                contentLabel='Modal'>
 
-              <form className='review-form'>
-                <h5>Rating</h5>
-                <div className='star-ratings'>
-                <input onChange={this.handleRatingInput}
-                       type='radio'
-                       name='rating'
-                       value={1}
-                       checked={this.state.review.rating === 1 ? true:false}></input>
-                     <input onChange={this.handleRatingInput}
-                       type='radio'
-                       name='rating'
-                       value={2}
-                       checked={this.state.review.rating === 2 ? true:false}></input>
-                     <input onChange={this.handleRatingInput}
-                       type='radio'
-                       name='rating'
-                       value={3}
-                       checked={this.state.review.rating === 3 ? true:false}></input>
-                     <input onChange={this.handleRatingInput}
-                       type='radio'
-                       name='rating'
-                       value={4}
-                       checked={this.state.review.rating === 4 ? true:false}></input>
-                     <input onChange={this.handleRatingInput}
-                       type='radio'
-                       name='rating'
-                       value={5}
-                       checked={this.state.review.rating === 5 ? true:false}></input>
-                   </div>
-                     <h5>Review</h5>
-                     <textarea onChange={this.handleBodyInput}
-                       name='body'
-                       value={this.state.review.body}></textarea>
 
-                     <button onClick={this.handleSubmit}>Submit</button>
+              <form className='review-form'>
+                <h3>Review this Book</h3>
+                <div>
+                  <h5>Rating:</h5>
+                  <StarRatingComponent
+                     name="rating"
+                     starCount={5}
+                     value={this.state.review.rating}
+                     onStarClick={this.handleRatingInput}
+                     starColor={'#e6994c'}
+                     emptyStarColor={'#ccc'}/>
+                 </div>
+
+                <div>
+                  <h5>Review:</h5>
+                  <textarea onChange={this.handleBodyInput}
+                    name='body'
+                    value={this.state.review.body}></textarea>
+                </div>
+
+                <button onClick={this.handleSubmit}>Submit</button>
               </form>
         </Modal>
       </div>

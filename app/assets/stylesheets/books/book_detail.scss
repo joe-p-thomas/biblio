@@ -13,7 +13,13 @@
 }
 
 .book-detail img {
-  width: 200px;
+  width: 250px;
+  margin-bottom: 6px;
+}
+
+.book-detail-left {
+  display: flex;
+  flex-direction: column;
 }
 
 .book-detail-text {
@@ -22,6 +28,11 @@
 
 .book-detail-text * {
   margin: 0 15px 15px 20px;
+}
+
+.book-detail-text p {
+  font-weight: 400;
+  color: #454545;
 }
 
 .shelving-form {

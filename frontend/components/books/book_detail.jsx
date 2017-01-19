@@ -100,9 +100,11 @@ class BookDetail extends React.Component {
     return (
       <div className='book-detail-container'>
         <div className='book-detail'>
-          <div>
-            <img src={`http://res.cloudinary.com/biblio/image/upload/w_200/${this.props.book.image_url}`}>
+          <div className='book-detail-left'>
+            <img src={`http://res.cloudinary.com/biblio/image/upload/w_250/${this.props.book.image_url}`}>
             </img>
+            {updateButton}
+            {bookshelfButton}
           </div>
           <div className='book-detail-text'>
             <h2>{this.props.book.title}</h2>
@@ -111,13 +113,7 @@ class BookDetail extends React.Component {
           </div>
         </div>
 
-        <div>
-          {updateButton}
-          {bookshelfButton}
-        </div>
         <ReviewsContainer />
-
-
 
         <Modal isOpen={this.state.bookshelfModalOpen}
                onRequestClose={() => this.setState({bookshelfModalOpen: false})}

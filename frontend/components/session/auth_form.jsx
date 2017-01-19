@@ -106,7 +106,7 @@ class AuthForm extends React.Component {
                className='modal'
                style={modalStyle}
                contentLabel='Modal'>
-          <h4>{text}</h4>
+          <h4 className='auth-title'>{text}</h4>
           <ul>{errors}</ul>
           <form className='auth-form'>
             {newUserForm}

@@ -1,8 +1,14 @@
+.reviews-container button {
+  padding: 2px 8px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
 .review-item {
   list-style: none;
   border-top: 1px solid lightgrey;
   padding-left: 15px;
-  width: auto;
+  max-width: 800px;
 }
 
 .review-item * {
@@ -18,11 +24,29 @@
   width: 100%
 }
 
+.review-form h3 {
+  font-family: 'Alegreya', serif;
+  margin-top: 0;
+}
+
 .review-form h5 {
   font-weight: 500;
+  margin: 5px 0;
 }
 
 .review-form textarea {
+  resize: none;
   max-width: 97%;
+  width: 97%;
   height: 75px;
+  padding: 3px;
+  border: none;
+  border-radius: 1px;
+  box-shadow: inset 0 1px 1px #CCCCCC;
+}
+
+.dv-star-rating {
+  text-align: left;
+  margin: 0;
+  padding-left: 7px;
 }

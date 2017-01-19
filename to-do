@@ -26,10 +26,11 @@ x create routes
 x create api utils
 x create action creators
 x create review reducer
-- create review form
-- create review container
-- create review component
-- update book detail to show reviews
+x create review form
+x create review container
+x create review component
+x update book detail to show reviews
+- style reviews and review form
 
 # Seed
-- check out seed_dump gem
+- seed the database

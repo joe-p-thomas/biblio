@@ -23,12 +23,18 @@
 .logo {
   font-family: 'Alegreya', serif;
   padding-left: 15px;
-  color: #1E3445;
+  color: #213c68;
   font-size: 40px
 }
 
 .logo:hover {
   cursor: pointer;
+}
+
+.auth-required h3 {
+  font-family: 'Alegreya', serif;
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
 
@@ -62,6 +68,11 @@ button:hover {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid lightgrey;
+}
+
+.auth-title {
+  font-family: 'Alegreya', serif;
+  font-size: 18px;
 }
 
 .auth-form * {

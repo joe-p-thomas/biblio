@@ -13,6 +13,48 @@ user1 = User.create(first_name: 'Joe', last_name: 'Thomas',
 # Guest User
 user2 = User.create(first_name: 'guest', last_name: 'user',
                     username: 'guest_user', password: 'password')
+# Dummy Users
+user3 = User.create(first_name: 'Ned', last_name: 'Stark',
+                    username: 'user3', password: 'password')
+
+user4 = User.create(first_name: 'Tyrion', last_name: 'Lannister',
+                    username: 'user4', password: 'password')
+
+user5 = User.create(first_name: 'Jon', last_name: 'Snow',
+                    username: 'user5', password: 'password')
+
+user6 = User.create(first_name: 'Hodor', last_name: 'Hodor',
+                    username: 'user6', password: 'password')
+
+user7 = User.create(first_name: 'Gandalf', last_name: 'the Grey',
+                    username: 'user7', password: 'password')
+
+user8 = User.create(first_name: 'Legolas', last_name: 'Greenleaf',
+                    username: 'user8', password: 'password')
+
+user9 = User.create(first_name: 'Galadriel', last_name: ',Lady of Light',
+                    username: 'user9', password: 'password')
+
+user10 = User.create(first_name: 'Kvothe', last_name: ', son of Arliden',
+                    username: 'user10', password: 'password')
+
+user11 = User.create(first_name: '', last_name: '',
+                    username: 'user11', password: 'password')
+
+user12 = User.create(first_name: '', last_name: '',
+                    username: 'user12', password: 'password')
+
+user13 = User.create(first_name: '', last_name: '',
+                    username: 'user13', password: 'password')
+
+user14 = User.create(first_name: '', last_name: '',
+                    username: 'user14', password: 'password')
+
+user15 = User.create(first_name: '', last_name: '',
+                    username: 'user15', password: 'password')
+
+user16 = User.create(first_name: '', last_name: '',
+                    username: 'user16', password: 'password')
 
 
 

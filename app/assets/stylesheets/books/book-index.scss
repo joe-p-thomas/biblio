@@ -1,5 +1,5 @@
 .book-index {
-  margin: 0 auto 0 200px;
+  margin: 0 0 0 200px;
 }
 
 .book-list {
@@ -15,9 +15,13 @@
 }
 
 .book-index-item:hover {
-  box-shadow: 0 0 4px #CCC;
+  box-shadow: 0 0 7px #CCC;
 }
 
 .book-index-item * {
-  margin: 10px
+  margin: 10px 0 10px 10px;
+}
+
+.book-index-item img {
+  box-shadow: 1px 1px 5px #777;
 }
