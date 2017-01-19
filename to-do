@@ -1,36 +1,14 @@
+# Book Index Item
+- consider tweaking display so that title and author are below cover
+- consider displaying average rating score for each book
+
 # New Book Form
-x connect action creator to new book form
-x have form inputs log changes
-x integrate cloudinary modal
-x on submit, request new book creation
-x either show errors or redirect to book-detail page
-x basic form styling
-x have another way into creating new book (add button to nav bar)
+- restyle so that it no longer looks like modal
 
-# Update Book Form
-x build form
-x have button on book detail view
-
-# Shelvings
-x Add books to shelf (book detail)
-x Delete books from shelf (bookshelf detail)
-
-# Reviews: back end
-x create migration
-x create model
-x create controller
-x create views
-x create routes
-
-# Reviews: front end
-x create api utils
-x create action creators
-x create review reducer
-x create review form
-x create review container
-x create review component
-x update book detail to show reviews
-- style reviews and review form
+# Reviews
+- When user first creates review, button does not switch to edit review until refresh
+- add functionality to delete review
+x displayed reviews could have stars instead of number
 
 # Seed
 - seed the database

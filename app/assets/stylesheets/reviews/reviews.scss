@@ -12,7 +12,12 @@
 }
 
 .review-item * {
-  margin: 10px;
+  margin: 5px;
+}
+
+.review-item .dv-star-rating-star {
+  margin: -6px;
+  padding: 1px;
 }
 
 .review-form {

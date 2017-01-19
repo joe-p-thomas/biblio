@@ -45,7 +45,7 @@ class Reviews extends React.Component {
         .then(() => this.setState({modalOpen: false}));
     } else {
       this.props.createReview(this.state.review)
-        .then(() => this.setSTte({modalOpen: false}));
+        .then(() => this.setState({modalOpen: false}));
     }
   }
 
@@ -72,7 +72,13 @@ class Reviews extends React.Component {
         <li className='review-item'
             key={review.id}>
           <h4>{review.userName}</h4>
-          <p>rating: {review.rating}</p>
+            <StarRatingComponent
+               name="rating"
+               starCount={5}
+               value={review.rating}
+               starColor={'#e6994c'}
+               emptyStarColor={'#ccc'}
+               editing={false}/>
           <p>review: {review.body || ''}</p>
         </li>
       ))
