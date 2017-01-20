@@ -2,7 +2,7 @@ class Api::BookshelvesController < ApplicationController
 
   def index
     if current_user
-      @bookshelves = Bookshelf.where("user_id = ?", current_user.id)
+      @bookshelves = Bookshelf.includes(:books).where("user_id = ?", current_user.id)
       render 'api/bookshelves/index'
     else
       render json: {}, status: 200
