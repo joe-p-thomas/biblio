@@ -5,7 +5,7 @@ a new one can be added. Users can also write reviews for books, which
 will be visible for others.
 
 [Live Site](http://www.biblio-phile.com)
-![homepage](http://res.cloudinary.com/biblio/image/upload/v1484950566/Screen_Shot_2017-01-20_at_2.15.09_PM_yuwsfn.png)
+![bookshelf view](http://res.cloudinary.com/biblio/image/upload/v1484950566/Screen_Shot_2017-01-20_at_2.15.09_PM_yuwsfn.png)
 
 ## Technology
 Biblio was built with Rails and React/Redux. The photos are stored
@@ -16,6 +16,7 @@ with Cloudinary.
 - Search for books
 - Add books that are missing
 - Create bookshelves
+- Review books
 
 ## Future Features
 - Users can have friends
