@@ -301,7 +301,7 @@ reviews = ["A dazzling achievement.",
               prolific writer.",
            "A waste of my time. Do yourself a favor and move along.",
            "The story dragged in places and tended to be dull. But the end made up for it all.
-              Was worth the time in the end.",
+              Was worth the time.",
            "Not a genre that I normally delve into, but this book was a delightful surprise.
               I will be back for more.",
            "",

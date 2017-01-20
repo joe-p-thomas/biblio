@@ -9,11 +9,11 @@
   background-color: #EFEFEF;
   font-style: sans-serif;
   box-shadow: 0px 1px 4px #BBBBBB;
-  z-index: 2;
+  z-index: 1;
 }
 
 .nav * {
-  z-index: 2
+  z-index: 1;
 }
 
 .left-nav {

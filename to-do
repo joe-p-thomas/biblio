@@ -12,7 +12,7 @@ x display average rating
 x When user first creates review, button does not switch to edit review until refresh
 x add functionality to delete review
 x displayed reviews could have stars instead of number
-- further tweak styling
+x further tweak styling
 
 # Seed
 - seed the database
