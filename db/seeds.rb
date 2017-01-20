@@ -222,7 +222,83 @@ book25 = Book.create(title: 'The Fountainhead',
                    image_url: '5_the-fountainhead-by-ayn-rand_xosknh',
                    description: "This instant classic is the story of an intransigent young architect, his violent battle against conventional standards, and his explosive love affair with a beautiful woman who struggles to defeat him.")
 
+## More Books ##
+book26 = Book.create(title: "A Connecticut Yankee in King Arthur's Court",
+                     author: 'Mark Twain',
+                     user_id: 1,
+                     image_url: '162898_aqf4ip',
+                     description: "In this classic satiric novel, published in 1889, Hank Morgan, a supervisor in a Connecticut gun factory, falls unconscious after being whacked on the head. When he wakes up he finds himself in Britain in 528 — where he is immediately captured, hauled back to Camelot to be exhibited before the knights of King Arthur's Round Table, and sentenced to death. Things are not looking good.
+                                    But Hank is a quick-witted and enterprising fellow, and in the process of saving his life he turns himself into a celebrity of the highest magnitude. His Yankee ingenuity and knowledge of the world beyond the Dark Ages are regarded as the most powerful sorcery — winning him a position of prime minister as well as the eternal enmity of a jealous Merlin. In an effort to bring democratic principles and mechanical knowledge to the kingdom, Hank introduces newspapers, telephones, bicycles, and other modern conveniences to the Britain of the Dark Ages. But when he tries to improve the lot of the common people, chaos and war result, giving a bittersweet tone to this comic masterpiece by one of America's greatest storytellers.")
 
+book27 = Book.create(title: "Fahreneit 451",
+                     author: "Ray Bradbury",
+                     user_id: 1,
+                     image_url: "c3d288c6bc7f57336c0c15e162cef128_x2opi2",
+                     description: "Guy Montag is a fireman. In his world, where television rules and literature is on the brink of extinction, firemen start fires rather than put them out. His job is to destroy the most illegal of commodities, the printed book, along with the houses in which they are hidden.
+                                   Montag never questions the destruction and ruin his actions produce, returning each day to his bland life and wife, Mildred, who spends all day with her television “family.” But then he meets an eccentric young neighbor, Clarisse, who introduces him to a past where people didn’t live in fear and to a present where one sees the world through the ideas in books instead of the mindless chatter of television.
+                                   When Mildred attempts suicide and Clarisse suddenly disappears, Montag begins to question everything he has ever known. He starts hiding books in his home, and when his pilfering is discovered, the fireman has to run for his life.")
+
+book28 = Book.create(title: "Animal Farm",
+                     author: "George Orwell",
+                     user_id: 1,
+                     image_url: "animal_farm_cover2014_ta4urk",
+                     description: "Manor Farm is like any other English farm, expect for a drunken owner, Mr Jones, incompetent workers and oppressed animals. Fed up with the ignorance of their human masters, the animals rise up in rebellion and take over the farm. Led by intellectually superior pigs like Snowball and Napoleon, the animals how to take charge of their destiny and remove the inequities of their lives. But as time passes, the realize that things aren't happening quite as expected. Animal Farm is, one level, a simple story about barnyard animals. On a much deeper level, it is a savage political satire on corrupted ideals, misdirected revolutions and class conflict-themes as valid today as they were sixty years ago.")
+
+book29 = Book.create(title: "Ender's Game",
+                     author: "Orson Scott Card",
+                     user_id: 1,
+                     image_url: "375802_ynfvfi",
+                     description: "In order to develop a secure defense against a hostile alien race's next attack, government agencies breed child geniuses and train them as soldiers. A brilliant young boy, Andrew 'Ender' Wiggin lives with his kind but distant parents, his sadistic brother Peter, and the person he loves more than anyone else, his sister Valentine. Peter and Valentine were candidates for the soldier-training program but didn't make the cut--young Ender is the Wiggin drafted to the orbiting Battle School for rigorous military training.
+                                   Ender's skills make him a leader in school and respected in the Battle Room, where children play at mock battles in zero gravity. Yet growing up in an artificial community of young soldiers, Ender suffers greatly from isolation, rivalry from his peers, pressure from the adult teachers, and an unsettling fear of the alien invaders. His psychological battles include loneliness, fear that he is becoming like the cruel brother he remembers, and fanning the flames of devotion to his beloved sister.
+                                   Is Ender the general Earth needs? But Ender is not the only result of the genetic experiments. The war with the Buggers has been raging for a hundred years, and the quest for the perfect general has been underway for almost as long. Ender's two older siblings are every bit as unusual as he is, but in very different ways. Between the three of them lie the abilities to remake a world. If the world survives, that is.")
+
+book30 = Book.create(title: "1984",
+                     author: "George Orwell",
+                     user_id: 1,
+                     image_url: "lvorwell7n-1-web_tcvl0q",
+                     description: "It was a bright cold day in April, and the clocks were striking thirteen… And in this epic novel, George Orwell reminds us of BIG BROTHER the negative utopia that will befall upon the modern world. This is a classic for all to pay closer attention to and to and to be aware of the rulers and the tactics they employ.")
+
+book31 = Book.create(title: "The Alchemist",
+                     author: "Paulo Coehlo",
+                     user_id: 1,
+                     image_url: "9780062355300_jebc1d",
+                     description: "Paulo Coelho's masterpiece tells the mystical story of Santiago, an Andalusian shepherd boy who yearns to travel in search of a worldly treasure. His quest will lead him to riches far different—and far more satisfying—than he ever imagined. Santiago's journey teaches us about the essential wisdom of listening to our hearts, of recognizing opportunity and learning to read the omens strewn along life's path, and, most importantly, to follow our dreams.")
+
+# book = Book.create(title: "",
+#                      author: "",
+#                      user_id: ,
+#                      image_url: "",
+#                      description: "")
+#
+# book27 = Book.create(title: "",
+#                      author: "",
+#                      user_id: ,
+#                      image_url: "",
+#                      description: "")
+#
+# book27 = Book.create(title: "",
+#                      author: "",
+#                      user_id: ,
+#                      image_url: "",
+#                      description: "")
+#
+# book27 = Book.create(title: "",
+#                      author: "",
+#                      user_id: ,
+#                      image_url: "",
+#                      description: "")
+#
+# book27 = Book.create(title: "",
+#                      author: "",
+#                      user_id: ,
+#                      image_url: "",
+#                      description: "")
+#
+# book27 = Book.create(title: "",
+#                      author: "",
+#                      user_id: ,
+#                      image_url: "",
+#                      description: "")
 
 #### BOOKSHELVES ####
 fantasy = Bookshelf.create(title: 'Fantasy', user_id: guest.id)
