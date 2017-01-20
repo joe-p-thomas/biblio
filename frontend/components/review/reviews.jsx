@@ -98,7 +98,7 @@ class Reviews extends React.Component {
     }
 
     const reviewList = (
-      Object.values(this.props.reviews).map((review) => {
+      Object.values(this.props.reviews).reverse().map((review) => {
         let smallDeleteButton;
         if (this.props.usersReview &&
               this.props.usersReview.id === review.id) {
