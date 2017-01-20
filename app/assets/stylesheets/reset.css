@@ -16,6 +16,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   cursor: default;
 }
 
+input:hover, textarea:hover {
+  cursor: text;
+}
+
 article,
 aside,
 details,

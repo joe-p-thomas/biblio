@@ -30,6 +30,7 @@ class NewBook extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    window.scrollTo(0 , 0);
     this.props.action(this.state).then(
       (res) => {
         let id = Object.values(res)[0].id;

@@ -42,4 +42,15 @@
 .shelving-form {
   display: flex;
   flex-direction: column;
+  font-size: 15px;
+  margin: 15px;
+}
+
+.shelving-form h4 {
+  font-family: 'Alegreya', serif;
+  font-size: 19px;
+}
+
+.shelving-form input:hover {
+  cursor: default;
 }
