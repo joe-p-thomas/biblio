@@ -37,7 +37,6 @@
 }
 
 .bookshelf:hover {
-  cursor: pointer;
   background: lightgrey;
 }
 
@@ -52,6 +51,10 @@
   width: 15px;
   height: 15px;
   background-color: inherit;
+}
+
+.delete-button:hover {
+  cursor: pointer;
 }
 
 .add-button {

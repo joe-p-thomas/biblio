@@ -5,6 +5,7 @@
 }
 
 .review-item {
+  position: relative;
   list-style: none;
   border-top: 1px solid lightgrey;
   padding-left: 15px;
@@ -13,6 +14,22 @@
 
 .review-item * {
   margin: 5px;
+}
+
+.small-delete {
+  position: absolute;
+  top: -3px;
+  left: -6px;
+  font-size: 14px;
+  background-color: inherit;
+  visibility: hidden;
+  display: float;
+}
+
+.review-item:hover .small-delete {
+  visibility: visible;
+  background-color: inherit;
+  cursor: pointer;
 }
 
 .review-item .dv-star-rating-star {

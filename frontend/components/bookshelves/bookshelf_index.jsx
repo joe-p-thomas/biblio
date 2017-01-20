@@ -81,7 +81,7 @@ class Bookshelves extends React.Component {
 
   render() {
     const deleteButton =(
-      <button className='delete-button'
+      <button className='delete-button' title='delete shelf'
               onClick={this.deleteShelf}>
       x</button>
     );

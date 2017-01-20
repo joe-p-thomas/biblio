@@ -291,15 +291,13 @@ ratings = [1,
            3, 3, 3, 3,
            4, 4, 4, 4,
            5, 5, 5]
-reviews = ["A dazzling achievement.",
+good_reviews = ["A dazzling achievement.",
            "A work of manifest originality, if not genius.",
            "Immensely enjoyable… full of energy, intelligence and delicious turns of phrase.",
-           "A dull read, I would skip this one.",
            "A book that you cannot put down. If you have yet to read this, go get it now. If
               you have read it, go read it again.",
            "Here is an author that never ceases to amaze me. Another hit from this
               prolific writer.",
-           "A waste of my time. Do yourself a favor and move along.",
            "The story dragged in places and tended to be dull. But the end made up for it all.
               Was worth the time.",
            "Not a genre that I normally delve into, but this book was a delightful surprise.
@@ -309,16 +307,22 @@ reviews = ["A dazzling achievement.",
            "",
            "",
            "",
-           "",
-           "",
-           "",
            ""]
+
+bad_reviews = ["A dull read, I would skip this one.",
+               "A waste of my time. Do yourself a favor and move along.",
+               "",
+               ""]
 
 300.times do |_|
   user = User.all.sample
   book = Book.all.sample
   rating = ratings.sample
-  body = reviews.sample
+  if rating < 3
+    body = bad_reviews.sample
+  else
+    body = good_reviews.sample
+  end
 
   if user.first_name === 'Hodor'
     body = 'Hodor'

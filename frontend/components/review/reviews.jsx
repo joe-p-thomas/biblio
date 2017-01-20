@@ -99,9 +99,23 @@ class Reviews extends React.Component {
 
     const reviewList = (
       Object.values(this.props.reviews).map((review) => {
+        let smallDeleteButton;
+        if (this.props.usersReview &&
+              this.props.usersReview.id === review.id) {
+          smallDeleteButton = (
+            <button onClick={this.handleDelete} className='small-delete'
+                    title='delete review'>
+              x
+            </button>
+          );
+        } else {
+          smallDeleteButton = '';
+        }
+
         return (
           <li className='review-item'
               key={review.id}>
+            {smallDeleteButton}
             <h4>{review.userName}</h4>
             <StarRatingComponent
                className='stars'
