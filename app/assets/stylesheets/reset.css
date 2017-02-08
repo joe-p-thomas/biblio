@@ -12,13 +12,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
  font-family: sans-serif;
  border: none;
 }
-*:hover {
-  cursor: default;
-}
-
-input:hover, textarea:hover {
-  cursor: text;
-}
 
 article,
 aside,
