@@ -1,16 +1,10 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 
 class BookIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
     this.removeShelving = this.removeShelving.bind(this);
-  }
-
-  handleClick() {
-    this.props.router.push(`/book-detail/${this.props.book.id}`);
   }
 
   removeShelving(e) {
@@ -32,8 +26,7 @@ class BookIndexItem extends React.Component {
     let removeShelvingButton;
     if ( this.props.bookshelf ) {
       removeShelvingButton = (
-        <button id='delete-shelving'
-                onClick={this.removeShelving}>
+        <button id='delete-shelving'>
           Remove
         </button>
             );
@@ -42,7 +35,7 @@ class BookIndexItem extends React.Component {
     }
 
     return(
-      <div className='book-index-item' onClick={this.handleClick}>
+      <div className='book-index-item' id={this.props.book.id}>
         <img src={`http://res.cloudinary.com/biblio/image/upload/w_100/${this.props.book.image_url}`}>
         </img>
         <div>
@@ -55,4 +48,4 @@ class BookIndexItem extends React.Component {
   }
 }
 
-export default withRouter(BookIndexItem);
+export default BookIndexItem;
