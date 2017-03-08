@@ -3,23 +3,6 @@ import React from 'react';
 class BookIndexItem extends React.Component {
   constructor(props) {
     super(props);
-
-    this.removeShelving = this.removeShelving.bind(this);
-  }
-
-  removeShelving(e) {
-    e.preventDefault();
-    const idx = this.props.bookshelf.books.indexOf(this.props.book.id);
-    let newBooks = this.props.bookshelf.books;
-    newBooks.splice(idx, 1);
-    if ( newBooks.length === 0) {
-      newBooks = [''];
-    }
-    this.props.updateBookshelf({
-      id: this.props.bookshelf.id,
-      book_ids: newBooks
-    });
-    e.stopPropagation();
   }
 
   render() {
