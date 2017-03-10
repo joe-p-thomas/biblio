@@ -25,7 +25,7 @@ class Header extends React.Component {
     let dropDownNavButtons = '';
     if (this.state.dropDownNav) {
       dropDownNavButtons = (
-        <div className="drop-down-nav-buttons">
+        <div className="drop-down-nav-buttons" onClick={this.toggleNav}>
           <NavContainer />
         </div>
       );
