@@ -8,17 +8,35 @@ import NavContainer from './nav/nav_container';
 class Header extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      dropDownNav: false
+    };
+
+    this.toggleNav = this.toggleNav.bind(this);
   }
 
-  toggleModal() {
+  toggleNav() {
     this.setState({
-      modalOpen: !this.state.modalOpen
+      dropDownNav: !this.state.dropDownNav
     });
   }
 
   render() {
+    let dropDownNavButtons = '';
+    if (this.state.dropDownNav) {
+      dropDownNavButtons = (
+        <div className="drop-down-nav-buttons">
+          <NavContainer />
+        </div>
+      );
+    }
     return (
       <div className="nav">
+        <div className="drop-down-menu-button" onClick={this.toggleNav}>
+          <i className="fa fa-bars" aria-hidden="true"></i>
+        </div>
+        {dropDownNavButtons}
+
         <div className="left-nav">
             <h1 className='logo' onClick={() => this.props.router.push('/')}>
               Biblio

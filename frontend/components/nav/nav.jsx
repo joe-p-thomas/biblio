@@ -51,7 +51,7 @@ class Nav extends React.Component {
     );
 
     return (
-      <div>
+      <div className='nav-buttons'>
         {bookshelfButton}
         {browseButton}
         {addBookButton}

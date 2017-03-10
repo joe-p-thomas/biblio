@@ -108,7 +108,7 @@ class Bookshelves extends React.Component {
     ));
 
     return(
-      <div>
+      <div className='bookshelf-view'>
         <div className='bookshelf-sidebar'>
           <h4 className='title'>My Bookshelves</h4>
           <ul className='bookshelf-list'>
