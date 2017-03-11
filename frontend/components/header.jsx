@@ -9,10 +9,12 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dropDownNav: false
+      dropDownNav: false,
+      dropDownSession: false
     };
 
     this.toggleNav = this.toggleNav.bind(this);
+    this.toggleSession = this.toggleSession.bind(this);
   }
 
   toggleNav() {
@@ -21,22 +23,37 @@ class Header extends React.Component {
     });
   }
 
+  toggleSession() {
+    this.setState({
+      dropDownSession: !this.state.dropDownSession
+    });
+  }
+
   render() {
     let dropDownNavButtons = '';
     if (this.state.dropDownNav) {
       dropDownNavButtons = (
-        <div className="drop-down-nav-buttons" onClick={this.toggleNav}>
+        <div className="drop-down-nav-buttons">
           <NavContainer />
         </div>
       );
     }
+
+    let dropDownSessionButtons = '';
+    if (this.state.dropDownSession) {
+      dropDownSessionButtons = (
+        <div className="drop-down-session-buttons">
+          <SessionContainer />
+        </div>
+      );
+    }
+
     return (
       <div className="nav">
         <div className="drop-down-menu-button" onClick={this.toggleNav}>
           <i className="fa fa-bars" aria-hidden="true"></i>
         </div>
         {dropDownNavButtons}
-
         <div className="left-nav">
             <h1 className='logo' onClick={() => this.props.router.push('/')}>
               Biblio
@@ -46,7 +63,13 @@ class Header extends React.Component {
 
         <SearchBarContainer/>
 
-        <SessionContainer />
+        <div className="drop-down-session-menu" onClick={this.toggleSession}>
+          <i className="fa fa-user-o" aria-hidden="true"></i>
+        </div>
+        {dropDownSessionButtons}
+        <div className="session-container">
+          <SessionContainer />
+        </div>
       </div>
     );
   }

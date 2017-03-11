@@ -2,6 +2,10 @@
   display: none;
 }
 
+.drop-down-session-menu {
+  display: none;
+}
+
 .drop-down-nav-buttons {
   position: fixed;
   top: 50px;
@@ -19,11 +23,19 @@
   }
 }
 
+.drop-down-session-buttons {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  background-color: #EFEFEF;
+  padding: 10px 15px;
+  box-shadow: 0px 2px 3px #BBBBBB;
+}
+
 @media screen and (max-width: 850px) {
   .logo {
     display: none;
   }
-
 }
 
 @media screen and (max-width: 720px) {
@@ -32,6 +44,15 @@
   }
 
   .drop-down-menu-button {
+    display: block;
+    padding: 15px;
+  }
+
+  .session-container {
+    display: none;
+  }
+
+  .drop-down-session-menu {
     display: block;
     padding: 15px;
   }
@@ -49,8 +70,6 @@
   .book-index {
     margin: 0 0 0 10px;
   }
-
-
 }
 
 
