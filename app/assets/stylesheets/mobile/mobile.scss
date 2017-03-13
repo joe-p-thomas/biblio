@@ -36,6 +36,10 @@
   .logo {
     display: none;
   }
+
+  .book-detail-container {
+    margin: 0 0 0 10px;
+  }
 }
 
 @media screen and (max-width: 720px) {
@@ -73,6 +77,16 @@
 }
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 575px) {
+ .book-detail {
+   flex-direction: column;
+ }
 
+ .book-detail-left button {
+   width: 240px;
+ }
+
+ .book-detail-text {
+   width: auto;
+ }
 }
