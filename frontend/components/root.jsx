@@ -25,7 +25,7 @@ const Root = ({store}) => {
     store.dispatch(requestBookDetail({id: nextState.params.id}))
       .then(store.dispatch(requestBookshelves()))
       .then(store.dispatch(requestReviews(nextState.params.id)))
-      .then(cb);
+      .then(() => cb());
   };
 
   const requestEditDetail = (nextState, replace, cb) => {
@@ -33,7 +33,7 @@ const Root = ({store}) => {
       replace('/');
     } else {
       store.dispatch(requestBookDetail({id: nextState.params.id}))
-        .then(cb);
+        .then(() => cb());
     }
   };
 
@@ -43,7 +43,7 @@ const Root = ({store}) => {
     } else {
       store.dispatch(requestUsersBooks())
       .then(store.dispatch(requestBookshelves()))
-      .then(cb);
+      .then(() => cb());
     }
   };
 
