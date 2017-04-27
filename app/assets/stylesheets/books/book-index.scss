@@ -7,6 +7,29 @@
   flex-wrap: wrap;
 }
 
+.sort {
+  padding-left: 30px;
+  font-size: 14px;
+  display: flex;
+}
+
+.sort ul {
+  display: flex;
+}
+
+.sort ul p {
+  margin: 0 10px;
+}
+
+.sort ul p:hover {
+  cursor: default;
+  text-decoration: underline;
+}
+
+.sort-selected {
+  font-weight: bold;
+}
+
 .book-index-item {
   padding: 10px;
   display: flex;

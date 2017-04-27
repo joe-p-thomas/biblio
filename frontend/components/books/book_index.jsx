@@ -6,7 +6,8 @@ class BookIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sortBy: "author"
+      sortBy: "author",
+      sortOrder: 1
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleSortClick = this.handleSortClick.bind(this);
@@ -39,19 +40,19 @@ class BookIndex extends React.Component {
   }
 
   handleSortClick(property) {
-    this.setState({sortBy: property});
+    let sortOrder = this.state.sortOrder;
+    sortOrder *= (property === this.state.sortBy) ? -1 : 1;
+    this.setState({
+      sortBy: property,
+      sortOrder
+    });
   }
 
   sortBy(property) {
-    let sortOrder = 1;
-    if (property[0] === "-") {
-        sortOrder = -1;
-        property = property.substr(1);
-    }
     if (property === "author") {
-      return this.sortByAuthor(sortOrder);
+      return this.sortByAuthor(this.state.sortOrder);
     } else if (property === "title") {
-      return this.sortByTitle(sortOrder);
+      return this.sortByTitle(this.state.sortOrder);
     }
   }
 
@@ -105,13 +106,24 @@ class BookIndex extends React.Component {
                      bookshelf={this.props.bookshelf}
                      updateBookshelf={this.props.updateBookshelf}/>
     ));
+    const sortProps = ["author", "title"];
+    const sortButtons = sortProps.map((property, idx) => (
+      <p key={idx}
+         onClick={() => this.handleSortClick(property)}
+         className={(property === this.state.sortBy) ? "sort-selected" : ""}>
+        {property}
+      </p>
+    ));
     return(
       <div className='book-index'>
         <h2>{this.props.title}</h2>
-        <ul>
-          <li onClick={() => this.handleSortClick("author")}>author</li>
-          <li onClick={() => this.handleSortClick("title")}>title</li>
-        </ul>
+        <div className='sort'>
+          sort by:
+          <ul>
+            {sortButtons}
+          </ul>
+        </div>
+
         <ul className='book-list'
             onClick={this.handleClick}>
           {books}
