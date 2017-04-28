@@ -19,7 +19,7 @@ with Cloudinary.
 - Review books
 
 ## Future Features
-- Users can have friends
-- Feed of what friends are reading and reviewing
-- Users can earn badges for certain achievements
-- Browse page can be sorted by ratings or most-read
+- [ ] Users can have friends
+- [ ] Feed of what friends are reading and reviewing
+- [ ] Users can earn badges for certain achievements
+- [X] Browse page can be sorted by title or author
